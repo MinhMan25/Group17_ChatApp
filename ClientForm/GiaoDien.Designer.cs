@@ -53,6 +53,19 @@
             pnl_TieuDe = new Panel();
             lb_TieuDe = new Label();
             pnl_Setting = new Panel();
+            pnl_TaiKhoan = new Panel();
+            btn_LuuInfo = new Button();
+            txt_Info = new RichTextBox();
+            ln_DisplayUsername = new Label();
+            lb_Info = new Label();
+            ln_UserEmail = new Label();
+            lb_Username = new Label();
+            pictureBox1 = new PictureBox();
+            lb_TieuDeTaiKhoan = new Label();
+            pnl_DanhMucCaiDat = new Panel();
+            lb_MenuCaiDat = new Label();
+            btn_BaoMat = new Button();
+            btn_TaiKhoan = new Button();
             pnl_GroupChat = new Panel();
             pnl_Friend = new Panel();
             pnl_Menu.SuspendLayout();
@@ -64,6 +77,10 @@
             pnl_List.SuspendLayout();
             pnl_TimKiem.SuspendLayout();
             pnl_TieuDe.SuspendLayout();
+            pnl_Setting.SuspendLayout();
+            pnl_TaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnl_DanhMucCaiDat.SuspendLayout();
             SuspendLayout();
             // 
             // btn_Chat
@@ -193,6 +210,7 @@
             // 
             // btn_DinhKem
             // 
+            btn_DinhKem.Anchor = AnchorStyles.Left;
             btn_DinhKem.BackColor = Color.Transparent;
             btn_DinhKem.FlatAppearance.BorderSize = 0;
             btn_DinhKem.FlatStyle = FlatStyle.Flat;
@@ -206,6 +224,7 @@
             // 
             // btn_Gui
             // 
+            btn_Gui.Anchor = AnchorStyles.Right;
             btn_Gui.BackColor = Color.FromArgb(37, 99, 235);
             btn_Gui.FlatAppearance.BorderSize = 0;
             btn_Gui.FlatStyle = FlatStyle.Flat;
@@ -221,6 +240,7 @@
             // 
             // txt_NoiDung
             // 
+            txt_NoiDung.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txt_NoiDung.Location = new Point(67, 11);
             txt_NoiDung.Multiline = true;
             txt_NoiDung.Name = "txt_NoiDung";
@@ -243,6 +263,7 @@
             // 
             // btn_GoiThoai
             // 
+            btn_GoiThoai.Anchor = AnchorStyles.Right;
             btn_GoiThoai.Location = new Point(535, 17);
             btn_GoiThoai.Name = "btn_GoiThoai";
             btn_GoiThoai.Size = new Size(75, 23);
@@ -345,11 +366,163 @@
             // 
             // pnl_Setting
             // 
+            pnl_Setting.BackColor = Color.FromArgb(241, 245, 249);
+            pnl_Setting.Controls.Add(pnl_TaiKhoan);
+            pnl_Setting.Controls.Add(pnl_DanhMucCaiDat);
             pnl_Setting.Dock = DockStyle.Fill;
-            pnl_Setting.Location = new Point(0, 0);
+            pnl_Setting.Location = new Point(125, 0);
             pnl_Setting.Name = "pnl_Setting";
-            pnl_Setting.Size = new Size(1048, 607);
+            pnl_Setting.Size = new Size(923, 607);
             pnl_Setting.TabIndex = 7;
+            // 
+            // pnl_TaiKhoan
+            // 
+            pnl_TaiKhoan.BackColor = Color.White;
+            pnl_TaiKhoan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_TaiKhoan.Controls.Add(btn_LuuInfo);
+            pnl_TaiKhoan.Controls.Add(txt_Info);
+            pnl_TaiKhoan.Controls.Add(ln_DisplayUsername);
+            pnl_TaiKhoan.Controls.Add(lb_Info);
+            pnl_TaiKhoan.Controls.Add(ln_UserEmail);
+            pnl_TaiKhoan.Controls.Add(lb_Username);
+            pnl_TaiKhoan.Controls.Add(pictureBox1);
+            pnl_TaiKhoan.Controls.Add(lb_TieuDeTaiKhoan);
+            pnl_TaiKhoan.Dock = DockStyle.Fill;
+            pnl_TaiKhoan.Location = new Point(144, 0);
+            pnl_TaiKhoan.Name = "pnl_TaiKhoan";
+            pnl_TaiKhoan.Size = new Size(779, 607);
+            pnl_TaiKhoan.TabIndex = 1;
+            // 
+            // btn_LuuInfo
+            // 
+            btn_LuuInfo.Anchor = AnchorStyles.Top;
+            btn_LuuInfo.BackColor = Color.FromArgb(37, 99, 235);
+            btn_LuuInfo.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btn_LuuInfo.Location = new Point(150, 506);
+            btn_LuuInfo.Name = "btn_LuuInfo";
+            btn_LuuInfo.Size = new Size(494, 36);
+            btn_LuuInfo.TabIndex = 9;
+            btn_LuuInfo.Text = "LƯU THAY ĐỔI";
+            btn_LuuInfo.UseVisualStyleBackColor = true;
+            // 
+            // txt_Info
+            // 
+            txt_Info.Anchor = AnchorStyles.Top;
+            txt_Info.Location = new Point(150, 357);
+            txt_Info.Name = "txt_Info";
+            txt_Info.Size = new Size(494, 128);
+            txt_Info.TabIndex = 8;
+            txt_Info.Text = "";
+            // 
+            // ln_DisplayUsername
+            // 
+            ln_DisplayUsername.Anchor = AnchorStyles.Top;
+            ln_DisplayUsername.AutoSize = true;
+            ln_DisplayUsername.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+            ln_DisplayUsername.Location = new Point(293, 213);
+            ln_DisplayUsername.Name = "ln_DisplayUsername";
+            ln_DisplayUsername.Size = new Size(231, 31);
+            ln_DisplayUsername.TabIndex = 7;
+            ln_DisplayUsername.Text = "DISPLAYUSERNAME";
+            // 
+            // lb_Info
+            // 
+            lb_Info.Anchor = AnchorStyles.Top;
+            lb_Info.AutoSize = true;
+            lb_Info.Font = new Font("Segoe UI", 17F);
+            lb_Info.Location = new Point(293, 323);
+            lb_Info.Name = "lb_Info";
+            lb_Info.Size = new Size(226, 31);
+            lb_Info.TabIndex = 6;
+            lb_Info.Text = "Thông Tin Giới Thiệu";
+            // 
+            // ln_UserEmail
+            // 
+            ln_UserEmail.Anchor = AnchorStyles.Top;
+            ln_UserEmail.AutoSize = true;
+            ln_UserEmail.Font = new Font("Segoe UI", 13F);
+            ln_UserEmail.Location = new Point(329, 272);
+            ln_UserEmail.Name = "ln_UserEmail";
+            ln_UserEmail.Size = new Size(147, 25);
+            ln_UserEmail.TabIndex = 5;
+            ln_UserEmail.Text = "User@gmail.com";
+            // 
+            // lb_Username
+            // 
+            lb_Username.Anchor = AnchorStyles.Top;
+            lb_Username.AutoSize = true;
+            lb_Username.Font = new Font("Segoe UI", 13F);
+            lb_Username.Location = new Point(352, 244);
+            lb_Username.Name = "lb_Username";
+            lb_Username.Size = new Size(104, 25);
+            lb_Username.TabIndex = 4;
+            lb_Username.Text = "USERNAME";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.BackColor = SystemColors.ActiveCaption;
+            pictureBox1.Location = new Point(361, 130);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(80, 80);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // lb_TieuDeTaiKhoan
+            // 
+            lb_TieuDeTaiKhoan.AutoSize = true;
+            lb_TieuDeTaiKhoan.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lb_TieuDeTaiKhoan.ForeColor = Color.FromArgb(15, 23, 42);
+            lb_TieuDeTaiKhoan.Location = new Point(21, 23);
+            lb_TieuDeTaiKhoan.Name = "lb_TieuDeTaiKhoan";
+            lb_TieuDeTaiKhoan.Size = new Size(165, 37);
+            lb_TieuDeTaiKhoan.TabIndex = 0;
+            lb_TieuDeTaiKhoan.Text = "TÀI KHOẢN";
+            // 
+            // pnl_DanhMucCaiDat
+            // 
+            pnl_DanhMucCaiDat.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_DanhMucCaiDat.BorderStyle = BorderStyle.FixedSingle;
+            pnl_DanhMucCaiDat.Controls.Add(lb_MenuCaiDat);
+            pnl_DanhMucCaiDat.Controls.Add(btn_BaoMat);
+            pnl_DanhMucCaiDat.Controls.Add(btn_TaiKhoan);
+            pnl_DanhMucCaiDat.Dock = DockStyle.Left;
+            pnl_DanhMucCaiDat.Location = new Point(0, 0);
+            pnl_DanhMucCaiDat.Name = "pnl_DanhMucCaiDat";
+            pnl_DanhMucCaiDat.Size = new Size(144, 607);
+            pnl_DanhMucCaiDat.TabIndex = 0;
+            // 
+            // lb_MenuCaiDat
+            // 
+            lb_MenuCaiDat.AutoSize = true;
+            lb_MenuCaiDat.Font = new Font("Segoe UI", 16F);
+            lb_MenuCaiDat.Location = new Point(21, 11);
+            lb_MenuCaiDat.Name = "lb_MenuCaiDat";
+            lb_MenuCaiDat.Size = new Size(94, 30);
+            lb_MenuCaiDat.TabIndex = 5;
+            lb_MenuCaiDat.Text = "CÀI ĐẶT";
+            // 
+            // btn_BaoMat
+            // 
+            btn_BaoMat.FlatAppearance.BorderSize = 0;
+            btn_BaoMat.FlatStyle = FlatStyle.Flat;
+            btn_BaoMat.Location = new Point(6, 100);
+            btn_BaoMat.Name = "btn_BaoMat";
+            btn_BaoMat.Size = new Size(123, 45);
+            btn_BaoMat.TabIndex = 4;
+            btn_BaoMat.Text = "Bảo Mật";
+            btn_BaoMat.UseVisualStyleBackColor = true;
+            // 
+            // btn_TaiKhoan
+            // 
+            btn_TaiKhoan.FlatAppearance.BorderSize = 0;
+            btn_TaiKhoan.FlatStyle = FlatStyle.Flat;
+            btn_TaiKhoan.Location = new Point(6, 49);
+            btn_TaiKhoan.Name = "btn_TaiKhoan";
+            btn_TaiKhoan.Size = new Size(123, 45);
+            btn_TaiKhoan.TabIndex = 2;
+            btn_TaiKhoan.Text = "Tài Khoản";
+            btn_TaiKhoan.UseVisualStyleBackColor = true;
             // 
             // pnl_GroupChat
             // 
@@ -362,9 +535,9 @@
             // pnl_Friend
             // 
             pnl_Friend.Dock = DockStyle.Fill;
-            pnl_Friend.Location = new Point(0, 0);
+            pnl_Friend.Location = new Point(125, 0);
             pnl_Friend.Name = "pnl_Friend";
-            pnl_Friend.Size = new Size(1048, 607);
+            pnl_Friend.Size = new Size(923, 607);
             pnl_Friend.TabIndex = 9;
             // 
             // GiaoDien
@@ -373,10 +546,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1048, 607);
             Controls.Add(pnl_Chat);
-            Controls.Add(pnl_Menu);
-            Controls.Add(pnl_Friend);
-            Controls.Add(pnl_GroupChat);
             Controls.Add(pnl_Setting);
+            Controls.Add(pnl_Friend);
+            Controls.Add(pnl_Menu);
+            Controls.Add(pnl_GroupChat);
             Name = "GiaoDien";
             Text = "Form1";
             pnl_Menu.ResumeLayout(false);
@@ -392,6 +565,12 @@
             pnl_TimKiem.PerformLayout();
             pnl_TieuDe.ResumeLayout(false);
             pnl_TieuDe.PerformLayout();
+            pnl_Setting.ResumeLayout(false);
+            pnl_TaiKhoan.ResumeLayout(false);
+            pnl_TaiKhoan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnl_DanhMucCaiDat.ResumeLayout(false);
+            pnl_DanhMucCaiDat.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -424,5 +603,18 @@
         private Button btn_Gui;
         private TextBox txt_NoiDung;
         private FlowLayoutPanel flp_TinNhan;
+        private Panel pnl_DanhMucCaiDat;
+        private Button btn_TaiKhoan;
+        private Label lb_MenuCaiDat;
+        private Button btn_BaoMat;
+        private Panel pnl_TaiKhoan;
+        private Label lb_TieuDeTaiKhoan;
+        private Label ln_UserEmail;
+        private Label lb_Username;
+        private PictureBox pictureBox1;
+        private Label ln_DisplayUsername;
+        private Label lb_Info;
+        private RichTextBox txt_Info;
+        private Button btn_LuuInfo;
     }
 }
