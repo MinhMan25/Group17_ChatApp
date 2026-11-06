@@ -21,8 +21,8 @@ namespace ClientForm
             this.FormClosed += GiaoDien_FormClosed;
 
             this.BackColor = AppColors.Background;
-            ChonNut(btn_Chat);
-            ChuyenPanel(pnl_Chat);
+            ChonNutMenu(btn_Chat);
+            ChuyenPanelMenu(pnl_Chat);
         }
 
 
@@ -81,7 +81,7 @@ namespace ClientForm
             ChatClientManager.Client.LineReceived -= Client_LineReceived;
         }
 
-        private void ChonNut(Button nutDuocChon)
+        private void ChonNutMenu(Button nutDuocChon)
         {
             Button[] danhSachNut =
             {
@@ -95,7 +95,21 @@ namespace ClientForm
             nutDuocChon.BackColor = AppColors.Selected;
             nutDuocChon.ForeColor = AppColors.Primary;
         }
-        private void ChuyenPanel(Panel PanelDuocChon)
+        private void ChonNutCaiDat(Button nutDuocChon)
+        {
+            Button[] danhSachNut =
+            {
+                btn_BaoMat, btn_TaiKhoan
+            };
+            foreach (Button nut in danhSachNut)
+            {
+                nut.BackColor = AppColors.Surface;
+                nut.ForeColor = AppColors.TextSecondary;
+            }
+            nutDuocChon.BackColor = AppColors.Selected;
+            nutDuocChon.ForeColor = AppColors.Primary;
+        }
+        private void ChuyenPanelMenu(Panel PanelDuocChon)
         {
             Panel[] danhSachpanel =
             {
@@ -107,28 +121,42 @@ namespace ClientForm
             }
             PanelDuocChon.Visible = true;
         }
+        private void ChuyenPanelCaiDat(Panel PanelDuocChon)
+        {
+            Panel[] danhSachpanel =
+            {
+                pnl_TaiKhoan, pnl_BaoMat
+            };
+            foreach (Panel pnl in danhSachpanel)
+            {
+                pnl.Visible = false;
+            }
+            PanelDuocChon.Visible = true;
+        }
         private void btn_Chat_Click(object sender, EventArgs e)
         {
-            ChonNut(btn_Chat);
-            ChuyenPanel(pnl_Chat);
+            ChonNutMenu(btn_Chat);
+            ChuyenPanelMenu(pnl_Chat);
         }
 
         private void btn_Friend_Click(object sender, EventArgs e)
         {
-            ChonNut(btn_Friend);
-            ChuyenPanel(pnl_Friend);
+            ChonNutMenu(btn_Friend);
+            ChuyenPanelMenu(pnl_Friend);
         }
 
         private void btn_GroupChat_Click(object sender, EventArgs e)
         {
-            ChonNut(btn_GroupChat);
-            ChuyenPanel(pnl_GroupChat);
+            ChonNutMenu(btn_GroupChat);
+            ChuyenPanelMenu(pnl_GroupChat);
         }
 
         private void btn_Setting_Click(object sender, EventArgs e)
         {
-            ChonNut(btn_Setting);
-            ChuyenPanel(pnl_Setting);
+            ChonNutMenu(btn_Setting);
+            ChuyenPanelMenu(pnl_Setting);
+            ChuyenPanelCaiDat(pnl_TaiKhoan);
+            ChonNutCaiDat(btn_TaiKhoan);
         }
 
         private void btn_LogOut_MouseEnter(object sender, EventArgs e)
@@ -201,5 +229,36 @@ namespace ClientForm
             btn_Gui.BackColor = AppColors.Primary;
         }
 
+        private void btn_TaiKhoan_Click(object sender, EventArgs e)
+        {
+            ChuyenPanelCaiDat(pnl_TaiKhoan);
+            ChonNutCaiDat(btn_TaiKhoan);
+        }
+
+        private void btn_BaoMat_Click(object sender, EventArgs e)
+        {
+            ChuyenPanelCaiDat(pnl_BaoMat);
+            ChonNutCaiDat(btn_BaoMat);
+        }
+
+        private void btn_DoiMatKhau_MouseEnter(object sender, EventArgs e)
+        {
+            btn_DoiMatKhau.BackColor = AppColors.PrimaryHover;
+        }
+
+        private void btn_DoiMatKhau_MouseLeave(object sender, EventArgs e)
+        {
+            btn_DoiMatKhau.BackColor = AppColors.Primary;
+        }
+
+        private void btn_DoiEmail_MouseEnter(object sender, EventArgs e)
+        {
+            btn_DoiEmail.BackColor = AppColors.PrimaryHover;
+        }
+
+        private void btn_DoiEmail_MouseLeave(object sender, EventArgs e)
+        {
+            btn_DoiEmail.BackColor = AppColors.Primary;
+        }
     }
 }
