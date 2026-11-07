@@ -30,7 +30,6 @@
         {
             btn_Chat = new Button();
             btn_Friend = new Button();
-            btn_GroupChat = new Button();
             btn_Setting = new Button();
             pnl_Menu = new Panel();
             btn_LogOut = new Button();
@@ -87,8 +86,18 @@
             lb_MenuCaiDat = new Label();
             btn_BaoMat = new Button();
             btn_TaiKhoan = new Button();
-            pnl_GroupChat = new Panel();
             pnl_Friend = new Panel();
+            pnl_DanhSachBan = new Panel();
+            flp_DanhSachban = new FlowLayoutPanel();
+            pnl_TimKiemBan = new Panel();
+            txt_TimKiemBan = new TextBox();
+            pnl_LoiMoiKetBan = new Panel();
+            flp_LoiMoiKetBan = new FlowLayoutPanel();
+            pnl_FriendHeader = new Panel();
+            btn_LoiMoiKetBan = new Button();
+            btn_DanhSachBan = new Button();
+            btn_ThemBanBe = new Button();
+            lb_TieuDeBanBe = new Label();
             pnl_Menu.SuspendLayout();
             pnl_Chat.SuspendLayout();
             pnl_HoiThoai.SuspendLayout();
@@ -103,6 +112,11 @@
             pnl_TaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnl_DanhMucCaiDat.SuspendLayout();
+            pnl_Friend.SuspendLayout();
+            pnl_DanhSachBan.SuspendLayout();
+            pnl_TimKiemBan.SuspendLayout();
+            pnl_LoiMoiKetBan.SuspendLayout();
+            pnl_FriendHeader.SuspendLayout();
             SuspendLayout();
             // 
             // btn_Chat
@@ -129,23 +143,11 @@
             btn_Friend.UseVisualStyleBackColor = true;
             btn_Friend.Click += btn_Friend_Click;
             // 
-            // btn_GroupChat
-            // 
-            btn_GroupChat.FlatAppearance.BorderSize = 0;
-            btn_GroupChat.FlatStyle = FlatStyle.Flat;
-            btn_GroupChat.Location = new Point(1, 87);
-            btn_GroupChat.Name = "btn_GroupChat";
-            btn_GroupChat.Size = new Size(123, 45);
-            btn_GroupChat.TabIndex = 3;
-            btn_GroupChat.Text = "Nhóm Chat";
-            btn_GroupChat.UseVisualStyleBackColor = true;
-            btn_GroupChat.Click += btn_GroupChat_Click;
-            // 
             // btn_Setting
             // 
             btn_Setting.FlatAppearance.BorderSize = 0;
             btn_Setting.FlatStyle = FlatStyle.Flat;
-            btn_Setting.Location = new Point(0, 129);
+            btn_Setting.Location = new Point(0, 87);
             btn_Setting.Name = "btn_Setting";
             btn_Setting.Size = new Size(123, 45);
             btn_Setting.TabIndex = 4;
@@ -159,7 +161,6 @@
             pnl_Menu.BorderStyle = BorderStyle.FixedSingle;
             pnl_Menu.Controls.Add(btn_Chat);
             pnl_Menu.Controls.Add(btn_Friend);
-            pnl_Menu.Controls.Add(btn_GroupChat);
             pnl_Menu.Controls.Add(btn_Setting);
             pnl_Menu.Controls.Add(btn_LogOut);
             pnl_Menu.Dock = DockStyle.Left;
@@ -782,32 +783,147 @@
             btn_TaiKhoan.UseVisualStyleBackColor = true;
             btn_TaiKhoan.Click += btn_TaiKhoan_Click;
             // 
-            // pnl_GroupChat
-            // 
-            pnl_GroupChat.Dock = DockStyle.Fill;
-            pnl_GroupChat.Location = new Point(0, 0);
-            pnl_GroupChat.Name = "pnl_GroupChat";
-            pnl_GroupChat.Size = new Size(1048, 607);
-            pnl_GroupChat.TabIndex = 8;
-            // 
             // pnl_Friend
             // 
+            pnl_Friend.Controls.Add(pnl_DanhSachBan);
+            pnl_Friend.Controls.Add(pnl_LoiMoiKetBan);
+            pnl_Friend.Controls.Add(pnl_FriendHeader);
             pnl_Friend.Dock = DockStyle.Fill;
             pnl_Friend.Location = new Point(125, 0);
             pnl_Friend.Name = "pnl_Friend";
             pnl_Friend.Size = new Size(923, 607);
             pnl_Friend.TabIndex = 9;
             // 
+            // pnl_DanhSachBan
+            // 
+            pnl_DanhSachBan.BackColor = Color.White;
+            pnl_DanhSachBan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_DanhSachBan.Controls.Add(flp_DanhSachban);
+            pnl_DanhSachBan.Controls.Add(pnl_TimKiemBan);
+            pnl_DanhSachBan.Dock = DockStyle.Fill;
+            pnl_DanhSachBan.Location = new Point(0, 133);
+            pnl_DanhSachBan.Name = "pnl_DanhSachBan";
+            pnl_DanhSachBan.Size = new Size(923, 474);
+            pnl_DanhSachBan.TabIndex = 1;
+            // 
+            // flp_DanhSachban
+            // 
+            flp_DanhSachban.Dock = DockStyle.Fill;
+            flp_DanhSachban.Location = new Point(0, 72);
+            flp_DanhSachban.Name = "flp_DanhSachban";
+            flp_DanhSachban.Size = new Size(921, 400);
+            flp_DanhSachban.TabIndex = 1;
+            // 
+            // pnl_TimKiemBan
+            // 
+            pnl_TimKiemBan.Controls.Add(txt_TimKiemBan);
+            pnl_TimKiemBan.Dock = DockStyle.Top;
+            pnl_TimKiemBan.Location = new Point(0, 0);
+            pnl_TimKiemBan.Name = "pnl_TimKiemBan";
+            pnl_TimKiemBan.Size = new Size(921, 72);
+            pnl_TimKiemBan.TabIndex = 0;
+            // 
+            // txt_TimKiemBan
+            // 
+            txt_TimKiemBan.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_TimKiemBan.Font = new Font("Segoe UI", 16F);
+            txt_TimKiemBan.Location = new Point(21, 19);
+            txt_TimKiemBan.Name = "txt_TimKiemBan";
+            txt_TimKiemBan.PlaceholderText = "Tìm kiếm bạn bè";
+            txt_TimKiemBan.Size = new Size(880, 36);
+            txt_TimKiemBan.TabIndex = 0;
+            // 
+            // pnl_LoiMoiKetBan
+            // 
+            pnl_LoiMoiKetBan.BackColor = Color.White;
+            pnl_LoiMoiKetBan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_LoiMoiKetBan.Controls.Add(flp_LoiMoiKetBan);
+            pnl_LoiMoiKetBan.Dock = DockStyle.Fill;
+            pnl_LoiMoiKetBan.Location = new Point(0, 133);
+            pnl_LoiMoiKetBan.Name = "pnl_LoiMoiKetBan";
+            pnl_LoiMoiKetBan.Size = new Size(923, 474);
+            pnl_LoiMoiKetBan.TabIndex = 0;
+            // 
+            // flp_LoiMoiKetBan
+            // 
+            flp_LoiMoiKetBan.Dock = DockStyle.Fill;
+            flp_LoiMoiKetBan.Location = new Point(0, 0);
+            flp_LoiMoiKetBan.Name = "flp_LoiMoiKetBan";
+            flp_LoiMoiKetBan.Size = new Size(921, 472);
+            flp_LoiMoiKetBan.TabIndex = 0;
+            // 
+            // pnl_FriendHeader
+            // 
+            pnl_FriendHeader.BackColor = Color.White;
+            pnl_FriendHeader.BorderStyle = BorderStyle.FixedSingle;
+            pnl_FriendHeader.Controls.Add(btn_LoiMoiKetBan);
+            pnl_FriendHeader.Controls.Add(btn_DanhSachBan);
+            pnl_FriendHeader.Controls.Add(btn_ThemBanBe);
+            pnl_FriendHeader.Controls.Add(lb_TieuDeBanBe);
+            pnl_FriendHeader.Dock = DockStyle.Top;
+            pnl_FriendHeader.Location = new Point(0, 0);
+            pnl_FriendHeader.Name = "pnl_FriendHeader";
+            pnl_FriendHeader.Size = new Size(923, 133);
+            pnl_FriendHeader.TabIndex = 0;
+            // 
+            // btn_LoiMoiKetBan
+            // 
+            btn_LoiMoiKetBan.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_LoiMoiKetBan.FlatStyle = FlatStyle.Flat;
+            btn_LoiMoiKetBan.Location = new Point(140, 87);
+            btn_LoiMoiKetBan.Name = "btn_LoiMoiKetBan";
+            btn_LoiMoiKetBan.Size = new Size(89, 35);
+            btn_LoiMoiKetBan.TabIndex = 3;
+            btn_LoiMoiKetBan.Text = "Lời Mời";
+            btn_LoiMoiKetBan.UseVisualStyleBackColor = true;
+            btn_LoiMoiKetBan.Click += btn_LoiMoiKetBan_Click;
+            // 
+            // btn_DanhSachBan
+            // 
+            btn_DanhSachBan.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_DanhSachBan.FlatStyle = FlatStyle.Flat;
+            btn_DanhSachBan.Location = new Point(22, 87);
+            btn_DanhSachBan.Name = "btn_DanhSachBan";
+            btn_DanhSachBan.Size = new Size(87, 35);
+            btn_DanhSachBan.TabIndex = 2;
+            btn_DanhSachBan.Text = "Bạn Bè";
+            btn_DanhSachBan.UseVisualStyleBackColor = true;
+            btn_DanhSachBan.Click += btn_DanhSachBan_Click;
+            // 
+            // btn_ThemBanBe
+            // 
+            btn_ThemBanBe.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_ThemBanBe.BackColor = Color.FromArgb(37, 99, 235);
+            btn_ThemBanBe.FlatAppearance.BorderSize = 0;
+            btn_ThemBanBe.FlatStyle = FlatStyle.Flat;
+            btn_ThemBanBe.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            btn_ThemBanBe.ForeColor = Color.White;
+            btn_ThemBanBe.Location = new Point(785, 24);
+            btn_ThemBanBe.Name = "btn_ThemBanBe";
+            btn_ThemBanBe.Size = new Size(115, 44);
+            btn_ThemBanBe.TabIndex = 1;
+            btn_ThemBanBe.Text = "Thêm Bạn";
+            btn_ThemBanBe.UseVisualStyleBackColor = true;
+            // 
+            // lb_TieuDeBanBe
+            // 
+            lb_TieuDeBanBe.AutoSize = true;
+            lb_TieuDeBanBe.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lb_TieuDeBanBe.Location = new Point(21, 23);
+            lb_TieuDeBanBe.Name = "lb_TieuDeBanBe";
+            lb_TieuDeBanBe.Size = new Size(112, 37);
+            lb_TieuDeBanBe.TabIndex = 0;
+            lb_TieuDeBanBe.Text = "BẠN BÈ";
+            // 
             // GiaoDien
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1048, 607);
+            Controls.Add(pnl_Friend);
             Controls.Add(pnl_Setting);
             Controls.Add(pnl_Chat);
-            Controls.Add(pnl_Friend);
             Controls.Add(pnl_Menu);
-            Controls.Add(pnl_GroupChat);
             Name = "GiaoDien";
             Text = "Form1";
             pnl_Menu.ResumeLayout(false);
@@ -831,6 +947,13 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnl_DanhMucCaiDat.ResumeLayout(false);
             pnl_DanhMucCaiDat.PerformLayout();
+            pnl_Friend.ResumeLayout(false);
+            pnl_DanhSachBan.ResumeLayout(false);
+            pnl_TimKiemBan.ResumeLayout(false);
+            pnl_TimKiemBan.PerformLayout();
+            pnl_LoiMoiKetBan.ResumeLayout(false);
+            pnl_FriendHeader.ResumeLayout(false);
+            pnl_FriendHeader.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -838,13 +961,11 @@
 
         private Button btn_Chat;
         private Button btn_Friend;
-        private Button btn_GroupChat;
         private Button btn_Setting;
         private Panel pnl_Menu;
         private Button btn_LogOut;
         private Panel pnl_Chat;
         private Panel pnl_Setting;
-        private Panel pnl_GroupChat;
         private Panel pnl_Friend;
         private Panel pnl_HoiThoai;
         private Panel pnl_List;
@@ -897,5 +1018,16 @@
         private TextBox txt_EmailMoi;
         private Label lb_EmailMoi;
         private Button btn_DoiEmail;
+        private Panel pnl_FriendHeader;
+        private Button btn_ThemBanBe;
+        private Label lb_TieuDeBanBe;
+        private Button btn_LoiMoiKetBan;
+        private Button btn_DanhSachBan;
+        private Panel pnl_DanhSachBan;
+        private Panel pnl_TimKiemBan;
+        private FlowLayoutPanel flp_DanhSachban;
+        private TextBox txt_TimKiemBan;
+        private Panel pnl_LoiMoiKetBan;
+        private FlowLayoutPanel flp_LoiMoiKetBan;
     }
 }

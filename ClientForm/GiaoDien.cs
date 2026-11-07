@@ -85,7 +85,21 @@ namespace ClientForm
         {
             Button[] danhSachNut =
             {
-                btn_Chat, btn_Friend, btn_GroupChat, btn_Setting
+                btn_Chat, btn_Friend, btn_Setting
+            };
+            foreach (Button nut in danhSachNut)
+            {
+                nut.BackColor = AppColors.Surface;
+                nut.ForeColor = AppColors.TextSecondary;
+            }
+            nutDuocChon.BackColor = AppColors.Selected;
+            nutDuocChon.ForeColor = AppColors.Primary;
+        }
+        private void ChonNutBanBe(Button nutDuocChon)
+        {
+            Button[] danhSachNut =
+            {
+                btn_LoiMoiKetBan, btn_DanhSachBan
             };
             foreach (Button nut in danhSachNut)
             {
@@ -113,7 +127,19 @@ namespace ClientForm
         {
             Panel[] danhSachpanel =
             {
-                pnl_Chat, pnl_Friend, pnl_GroupChat, pnl_Setting
+                pnl_Chat, pnl_Friend, pnl_Setting
+            };
+            foreach (Panel pnl in danhSachpanel)
+            {
+                pnl.Visible = false;
+            }
+            PanelDuocChon.Visible = true;
+        }
+        private void ChuyenPanelBanBe(Panel PanelDuocChon)
+        {
+            Panel[] danhSachpanel =
+            {
+                pnl_LoiMoiKetBan, pnl_DanhSachBan
             };
             foreach (Panel pnl in danhSachpanel)
             {
@@ -143,12 +169,8 @@ namespace ClientForm
         {
             ChonNutMenu(btn_Friend);
             ChuyenPanelMenu(pnl_Friend);
-        }
-
-        private void btn_GroupChat_Click(object sender, EventArgs e)
-        {
-            ChonNutMenu(btn_GroupChat);
-            ChuyenPanelMenu(pnl_GroupChat);
+            ChuyenPanelBanBe(pnl_DanhSachBan);
+            ChonNutBanBe(btn_DanhSachBan);
         }
 
         private void btn_Setting_Click(object sender, EventArgs e)
@@ -239,6 +261,17 @@ namespace ClientForm
         {
             ChuyenPanelCaiDat(pnl_BaoMat);
             ChonNutCaiDat(btn_BaoMat);
+        }
+        private void btn_DanhSachBan_Click(object sender, EventArgs e)
+        {
+            ChuyenPanelBanBe(pnl_DanhSachBan);
+            ChonNutBanBe(btn_DanhSachBan);
+        }
+
+        private void btn_LoiMoiKetBan_Click(object sender, EventArgs e)
+        {
+            ChuyenPanelBanBe(pnl_LoiMoiKetBan);
+            ChonNutBanBe(btn_LoiMoiKetBan);
         }
 
         private void btn_DoiMatKhau_MouseEnter(object sender, EventArgs e)
