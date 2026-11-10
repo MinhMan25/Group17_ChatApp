@@ -48,9 +48,16 @@
             // 
             btn_Chat.FlatAppearance.BorderSize = 0;
             btn_Chat.FlatStyle = FlatStyle.Flat;
+<<<<<<< Updated upstream
             btn_Chat.Location = new Point(0, 0);
             btn_Chat.Name = "btn_Chat";
             btn_Chat.Size = new Size(125, 45);
+=======
+            btn_Chat.Location = new Point(1, 0);
+            btn_Chat.Margin = new Padding(3, 4, 3, 4);
+            btn_Chat.Name = "btn_Chat";
+            btn_Chat.Size = new Size(141, 60);
+>>>>>>> Stashed changes
             btn_Chat.TabIndex = 1;
             btn_Chat.Text = "Tin Nhắn";
             btn_Chat.UseVisualStyleBackColor = true;
@@ -60,9 +67,16 @@
             // 
             btn_Friend.FlatAppearance.BorderSize = 0;
             btn_Friend.FlatStyle = FlatStyle.Flat;
+<<<<<<< Updated upstream
             btn_Friend.Location = new Point(0, 42);
             btn_Friend.Name = "btn_Friend";
             btn_Friend.Size = new Size(125, 45);
+=======
+            btn_Friend.Location = new Point(1, 60);
+            btn_Friend.Margin = new Padding(3, 4, 3, 4);
+            btn_Friend.Name = "btn_Friend";
+            btn_Friend.Size = new Size(141, 60);
+>>>>>>> Stashed changes
             btn_Friend.TabIndex = 2;
             btn_Friend.Text = "Bạn Bè";
             btn_Friend.UseVisualStyleBackColor = true;
@@ -84,9 +98,16 @@
             // 
             btn_Setting.FlatAppearance.BorderSize = 0;
             btn_Setting.FlatStyle = FlatStyle.Flat;
+<<<<<<< Updated upstream
             btn_Setting.Location = new Point(0, 124);
             btn_Setting.Name = "btn_Setting";
             btn_Setting.Size = new Size(125, 45);
+=======
+            btn_Setting.Location = new Point(0, 116);
+            btn_Setting.Margin = new Padding(3, 4, 3, 4);
+            btn_Setting.Name = "btn_Setting";
+            btn_Setting.Size = new Size(141, 60);
+>>>>>>> Stashed changes
             btn_Setting.TabIndex = 4;
             btn_Setting.Text = "Cài Đặt";
             btn_Setting.UseVisualStyleBackColor = true;
@@ -102,8 +123,9 @@
             pnl_Menu.Controls.Add(btn_GroupChat);
             pnl_Menu.Dock = DockStyle.Left;
             pnl_Menu.Location = new Point(0, 0);
+            pnl_Menu.Margin = new Padding(3, 4, 3, 4);
             pnl_Menu.Name = "pnl_Menu";
-            pnl_Menu.Size = new Size(125, 607);
+            pnl_Menu.Size = new Size(143, 809);
             pnl_Menu.TabIndex = 5;
             // 
             // btn_LogOut
@@ -112,9 +134,16 @@
             btn_LogOut.FlatAppearance.BorderSize = 0;
             btn_LogOut.FlatStyle = FlatStyle.Flat;
             btn_LogOut.ForeColor = Color.FromArgb(100, 116, 139);
+<<<<<<< Updated upstream
             btn_LogOut.Location = new Point(0, 562);
             btn_LogOut.Name = "btn_LogOut";
             btn_LogOut.Size = new Size(125, 45);
+=======
+            btn_LogOut.Location = new Point(0, 747);
+            btn_LogOut.Margin = new Padding(3, 4, 3, 4);
+            btn_LogOut.Name = "btn_LogOut";
+            btn_LogOut.Size = new Size(141, 60);
+>>>>>>> Stashed changes
             btn_LogOut.TabIndex = 6;
             btn_LogOut.Text = "Đăng Xuất";
             btn_LogOut.UseVisualStyleBackColor = true;
@@ -126,66 +155,826 @@
             pnl_Chat.Controls.Add(pnl_List);
             pnl_Chat.Controls.Add(pnl_Chatting);
             pnl_Chat.Dock = DockStyle.Fill;
-            pnl_Chat.Location = new Point(125, 0);
+            pnl_Chat.Location = new Point(143, 0);
+            pnl_Chat.Margin = new Padding(3, 4, 3, 4);
             pnl_Chat.Name = "pnl_Chat";
-            pnl_Chat.Size = new Size(923, 607);
+            pnl_Chat.Size = new Size(1055, 809);
             pnl_Chat.TabIndex = 6;
             // 
+<<<<<<< Updated upstream
+=======
+            // pnl_HoiThoai
+            // 
+            pnl_HoiThoai.BackColor = Color.FromArgb(241, 245, 249);
+            pnl_HoiThoai.BorderStyle = BorderStyle.FixedSingle;
+            pnl_HoiThoai.Controls.Add(flp_TinNhan);
+            pnl_HoiThoai.Controls.Add(pnl_Nhap);
+            pnl_HoiThoai.Controls.Add(pnl_ChatHeader);
+            pnl_HoiThoai.Dock = DockStyle.Fill;
+            pnl_HoiThoai.Location = new Point(343, 0);
+            pnl_HoiThoai.Margin = new Padding(3, 4, 3, 4);
+            pnl_HoiThoai.Name = "pnl_HoiThoai";
+            pnl_HoiThoai.Size = new Size(712, 809);
+            pnl_HoiThoai.TabIndex = 1;
+            // 
+            // flp_TinNhan
+            // 
+            flp_TinNhan.AutoScroll = true;
+            flp_TinNhan.Dock = DockStyle.Fill;
+            flp_TinNhan.FlowDirection = FlowDirection.TopDown;
+            flp_TinNhan.Location = new Point(0, 83);
+            flp_TinNhan.Margin = new Padding(3, 4, 3, 4);
+            flp_TinNhan.Name = "flp_TinNhan";
+            flp_TinNhan.Size = new Size(710, 633);
+            flp_TinNhan.TabIndex = 3;
+            flp_TinNhan.WrapContents = false;
+            // 
+            // pnl_Nhap
+            // 
+            pnl_Nhap.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_Nhap.Controls.Add(btn_DinhKem);
+            pnl_Nhap.Controls.Add(btn_Gui);
+            pnl_Nhap.Controls.Add(txt_NoiDung);
+            pnl_Nhap.Dock = DockStyle.Bottom;
+            pnl_Nhap.Location = new Point(0, 716);
+            pnl_Nhap.Margin = new Padding(3, 4, 3, 4);
+            pnl_Nhap.Name = "pnl_Nhap";
+            pnl_Nhap.Size = new Size(710, 91);
+            pnl_Nhap.TabIndex = 2;
+            // 
+            // btn_DinhKem
+            // 
+            btn_DinhKem.Anchor = AnchorStyles.Left;
+            btn_DinhKem.BackColor = Color.Transparent;
+            btn_DinhKem.FlatAppearance.BorderSize = 0;
+            btn_DinhKem.FlatStyle = FlatStyle.Flat;
+            btn_DinhKem.ForeColor = Color.White;
+            btn_DinhKem.Image = Properties.Resources.paperclip;
+            btn_DinhKem.Location = new Point(6, 15);
+            btn_DinhKem.Margin = new Padding(3, 4, 3, 4);
+            btn_DinhKem.Name = "btn_DinhKem";
+            btn_DinhKem.Size = new Size(64, 59);
+            btn_DinhKem.TabIndex = 2;
+            btn_DinhKem.UseVisualStyleBackColor = false;
+            // 
+            // btn_Gui
+            // 
+            btn_Gui.Anchor = AnchorStyles.Right;
+            btn_Gui.BackColor = Color.FromArgb(37, 99, 235);
+            btn_Gui.FlatAppearance.BorderSize = 0;
+            btn_Gui.FlatStyle = FlatStyle.Flat;
+            btn_Gui.ForeColor = Color.White;
+            btn_Gui.Image = Properties.Resources.send;
+            btn_Gui.Location = new Point(635, 15);
+            btn_Gui.Margin = new Padding(3, 4, 3, 4);
+            btn_Gui.Name = "btn_Gui";
+            btn_Gui.Size = new Size(62, 59);
+            btn_Gui.TabIndex = 1;
+            btn_Gui.UseVisualStyleBackColor = false;
+            btn_Gui.MouseEnter += btn_Gui_MouseEnter;
+            btn_Gui.MouseLeave += btn_Gui_MouseLeave;
+            // 
+            // txt_NoiDung
+            // 
+            txt_NoiDung.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txt_NoiDung.Location = new Point(77, 15);
+            txt_NoiDung.Margin = new Padding(3, 4, 3, 4);
+            txt_NoiDung.Multiline = true;
+            txt_NoiDung.Name = "txt_NoiDung";
+            txt_NoiDung.PlaceholderText = "Nhập tin nhắn. . .";
+            txt_NoiDung.Size = new Size(551, 57);
+            txt_NoiDung.TabIndex = 0;
+            // 
+            // pnl_ChatHeader
+            // 
+            pnl_ChatHeader.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_ChatHeader.Controls.Add(btn_GoiThoai);
+            pnl_ChatHeader.Controls.Add(lb_TrangThaiOnline);
+            pnl_ChatHeader.Controls.Add(lb_TenUser);
+            pnl_ChatHeader.Controls.Add(pic_Avatar);
+            pnl_ChatHeader.Dock = DockStyle.Top;
+            pnl_ChatHeader.Location = new Point(0, 0);
+            pnl_ChatHeader.Margin = new Padding(3, 4, 3, 4);
+            pnl_ChatHeader.Name = "pnl_ChatHeader";
+            pnl_ChatHeader.Size = new Size(710, 83);
+            pnl_ChatHeader.TabIndex = 0;
+            // 
+            // btn_GoiThoai
+            // 
+            btn_GoiThoai.Anchor = AnchorStyles.Right;
+            btn_GoiThoai.Location = new Point(611, 23);
+            btn_GoiThoai.Margin = new Padding(3, 4, 3, 4);
+            btn_GoiThoai.Name = "btn_GoiThoai";
+            btn_GoiThoai.Size = new Size(86, 31);
+            btn_GoiThoai.TabIndex = 3;
+            btn_GoiThoai.Text = "Gọi Thoại";
+            btn_GoiThoai.UseVisualStyleBackColor = true;
+            // 
+            // lb_TrangThaiOnline
+            // 
+            lb_TrangThaiOnline.AutoSize = true;
+            lb_TrangThaiOnline.ForeColor = Color.FromArgb(22, 163, 74);
+            lb_TrangThaiOnline.Location = new Point(96, 48);
+            lb_TrangThaiOnline.Name = "lb_TrangThaiOnline";
+            lb_TrangThaiOnline.Size = new Size(103, 20);
+            lb_TrangThaiOnline.TabIndex = 2;
+            lb_TrangThaiOnline.Text = "Online/Offline";
+            // 
+            // lb_TenUser
+            // 
+            lb_TenUser.AutoSize = true;
+            lb_TenUser.Font = new Font("Segoe UI", 13F);
+            lb_TenUser.Location = new Point(96, 11);
+            lb_TenUser.Name = "lb_TenUser";
+            lb_TenUser.Size = new Size(64, 30);
+            lb_TenUser.TabIndex = 1;
+            lb_TenUser.Text = "USER";
+            // 
+            // pic_Avatar
+            // 
+            pic_Avatar.BackColor = SystemColors.ActiveCaption;
+            pic_Avatar.Location = new Point(24, 15);
+            pic_Avatar.Margin = new Padding(3, 4, 3, 4);
+            pic_Avatar.Name = "pic_Avatar";
+            pic_Avatar.Size = new Size(46, 53);
+            pic_Avatar.TabIndex = 0;
+            pic_Avatar.TabStop = false;
+            // 
+>>>>>>> Stashed changes
             // pnl_List
             // 
             pnl_List.BackColor = SystemColors.ActiveCaption;
             pnl_List.Dock = DockStyle.Left;
             pnl_List.Location = new Point(0, 0);
+            pnl_List.Margin = new Padding(3, 4, 3, 4);
             pnl_List.Name = "pnl_List";
+<<<<<<< Updated upstream
             pnl_List.Size = new Size(184, 607);
+=======
+            pnl_List.Size = new Size(343, 809);
+>>>>>>> Stashed changes
             pnl_List.TabIndex = 0;
             // 
             // pnl_Chatting
             // 
+<<<<<<< Updated upstream
             pnl_Chatting.BackColor = SystemColors.HotTrack;
             pnl_Chatting.Dock = DockStyle.Fill;
             pnl_Chatting.Location = new Point(0, 0);
             pnl_Chatting.Name = "pnl_Chatting";
             pnl_Chatting.Size = new Size(923, 607);
             pnl_Chatting.TabIndex = 1;
+=======
+            flp_DanhSachChat.AutoScroll = true;
+            flp_DanhSachChat.Dock = DockStyle.Fill;
+            flp_DanhSachChat.FlowDirection = FlowDirection.TopDown;
+            flp_DanhSachChat.Location = new Point(0, 116);
+            flp_DanhSachChat.Margin = new Padding(3, 4, 3, 4);
+            flp_DanhSachChat.Name = "flp_DanhSachChat";
+            flp_DanhSachChat.Size = new Size(341, 691);
+            flp_DanhSachChat.TabIndex = 2;
+            flp_DanhSachChat.WrapContents = false;
+            // 
+            // pnl_TimKiem
+            // 
+            pnl_TimKiem.Controls.Add(txt_TimKiem);
+            pnl_TimKiem.Dock = DockStyle.Top;
+            pnl_TimKiem.ForeColor = Color.FromArgb(255, 255, 255);
+            pnl_TimKiem.Location = new Point(0, 60);
+            pnl_TimKiem.Margin = new Padding(3, 4, 3, 4);
+            pnl_TimKiem.Name = "pnl_TimKiem";
+            pnl_TimKiem.Size = new Size(341, 56);
+            pnl_TimKiem.TabIndex = 1;
+            // 
+            // txt_TimKiem
+            // 
+            txt_TimKiem.BackColor = Color.FromArgb(241, 245, 249);
+            txt_TimKiem.Font = new Font("Segoe UI", 12F);
+            txt_TimKiem.Location = new Point(-1, 8);
+            txt_TimKiem.Margin = new Padding(3, 4, 3, 4);
+            txt_TimKiem.Name = "txt_TimKiem";
+            txt_TimKiem.PlaceholderText = "Tìm Kiếm. . .";
+            txt_TimKiem.Size = new Size(342, 34);
+            txt_TimKiem.TabIndex = 0;
+            // 
+            // pnl_TieuDe
+            // 
+            pnl_TieuDe.Controls.Add(lb_TieuDe);
+            pnl_TieuDe.Dock = DockStyle.Top;
+            pnl_TieuDe.Location = new Point(0, 0);
+            pnl_TieuDe.Margin = new Padding(3, 4, 3, 4);
+            pnl_TieuDe.Name = "pnl_TieuDe";
+            pnl_TieuDe.Size = new Size(341, 60);
+            pnl_TieuDe.TabIndex = 0;
+            // 
+            // lb_TieuDe
+            // 
+            lb_TieuDe.AutoSize = true;
+            lb_TieuDe.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lb_TieuDe.ForeColor = Color.FromArgb(15, 23, 42);
+            lb_TieuDe.Location = new Point(87, 12);
+            lb_TieuDe.Name = "lb_TieuDe";
+            lb_TieuDe.Size = new Size(187, 37);
+            lb_TieuDe.TabIndex = 0;
+            lb_TieuDe.Text = "TRÒ CHUYỆN";
+>>>>>>> Stashed changes
             // 
             // pnl_Setting
             // 
             pnl_Setting.BackColor = Color.Yellow;
             pnl_Setting.Dock = DockStyle.Fill;
+<<<<<<< Updated upstream
             pnl_Setting.Location = new Point(0, 0);
             pnl_Setting.Name = "pnl_Setting";
             pnl_Setting.Size = new Size(1048, 607);
             pnl_Setting.TabIndex = 7;
             // 
+=======
+            pnl_Setting.Location = new Point(143, 0);
+            pnl_Setting.Margin = new Padding(3, 4, 3, 4);
+            pnl_Setting.Name = "pnl_Setting";
+            pnl_Setting.Size = new Size(1055, 809);
+            pnl_Setting.TabIndex = 7;
+            // 
+            // pnl_BaoMat
+            // 
+            pnl_BaoMat.BackColor = Color.White;
+            pnl_BaoMat.BorderStyle = BorderStyle.FixedSingle;
+            pnl_BaoMat.Controls.Add(btn_DoiEmail);
+            pnl_BaoMat.Controls.Add(txt_EmailMoi);
+            pnl_BaoMat.Controls.Add(lb_EmailMoi);
+            pnl_BaoMat.Controls.Add(btn_DoiMatKhau);
+            pnl_BaoMat.Controls.Add(txt_XacNhanMatKhau);
+            pnl_BaoMat.Controls.Add(txt_MatKhauMoi);
+            pnl_BaoMat.Controls.Add(txt_MatKhauCu);
+            pnl_BaoMat.Controls.Add(lb_XacNhanMatKhau);
+            pnl_BaoMat.Controls.Add(lb_MatKhauMoi);
+            pnl_BaoMat.Controls.Add(lb_MatKhauCu);
+            pnl_BaoMat.Controls.Add(lb_EditEmail);
+            pnl_BaoMat.Controls.Add(lb_EditMatKhau);
+            pnl_BaoMat.Controls.Add(lb_BaoMat);
+            pnl_BaoMat.Dock = DockStyle.Fill;
+            pnl_BaoMat.Location = new Point(164, 0);
+            pnl_BaoMat.Margin = new Padding(3, 4, 3, 4);
+            pnl_BaoMat.Name = "pnl_BaoMat";
+            pnl_BaoMat.Size = new Size(891, 809);
+            pnl_BaoMat.TabIndex = 10;
+            // 
+            // btn_DoiEmail
+            // 
+            btn_DoiEmail.BackColor = Color.FromArgb(37, 99, 235);
+            btn_DoiEmail.FlatAppearance.BorderSize = 0;
+            btn_DoiEmail.FlatStyle = FlatStyle.Flat;
+            btn_DoiEmail.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            btn_DoiEmail.ForeColor = Color.White;
+            btn_DoiEmail.Location = new Point(89, 615);
+            btn_DoiEmail.Margin = new Padding(3, 4, 3, 4);
+            btn_DoiEmail.Name = "btn_DoiEmail";
+            btn_DoiEmail.Size = new Size(200, 52);
+            btn_DoiEmail.TabIndex = 12;
+            btn_DoiEmail.Text = "Đổi Email";
+            btn_DoiEmail.UseVisualStyleBackColor = true;
+            btn_DoiEmail.MouseEnter += btn_DoiEmail_MouseEnter;
+            btn_DoiEmail.MouseLeave += btn_DoiEmail_MouseLeave;
+            // 
+            // txt_EmailMoi
+            // 
+            txt_EmailMoi.Font = new Font("Segoe UI", 12F);
+            txt_EmailMoi.Location = new Point(338, 525);
+            txt_EmailMoi.Margin = new Padding(3, 4, 3, 4);
+            txt_EmailMoi.Name = "txt_EmailMoi";
+            txt_EmailMoi.Size = new Size(358, 34);
+            txt_EmailMoi.TabIndex = 11;
+            // 
+            // lb_EmailMoi
+            // 
+            lb_EmailMoi.AutoSize = true;
+            lb_EmailMoi.Font = new Font("Segoe UI", 12F);
+            lb_EmailMoi.Location = new Point(89, 529);
+            lb_EmailMoi.Name = "lb_EmailMoi";
+            lb_EmailMoi.Size = new Size(99, 28);
+            lb_EmailMoi.TabIndex = 10;
+            lb_EmailMoi.Text = "Email Mới";
+            // 
+            // btn_DoiMatKhau
+            // 
+            btn_DoiMatKhau.BackColor = Color.FromArgb(37, 99, 235);
+            btn_DoiMatKhau.FlatAppearance.BorderSize = 0;
+            btn_DoiMatKhau.FlatStyle = FlatStyle.Flat;
+            btn_DoiMatKhau.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            btn_DoiMatKhau.ForeColor = Color.White;
+            btn_DoiMatKhau.Location = new Point(89, 369);
+            btn_DoiMatKhau.Margin = new Padding(3, 4, 3, 4);
+            btn_DoiMatKhau.Name = "btn_DoiMatKhau";
+            btn_DoiMatKhau.Size = new Size(200, 52);
+            btn_DoiMatKhau.TabIndex = 9;
+            btn_DoiMatKhau.Text = "Đổi Mật Khẩu";
+            btn_DoiMatKhau.UseVisualStyleBackColor = true;
+            btn_DoiMatKhau.MouseEnter += btn_DoiMatKhau_MouseEnter;
+            btn_DoiMatKhau.MouseLeave += btn_DoiMatKhau_MouseLeave;
+            // 
+            // txt_XacNhanMatKhau
+            // 
+            txt_XacNhanMatKhau.Font = new Font("Segoe UI", 12F);
+            txt_XacNhanMatKhau.Location = new Point(338, 297);
+            txt_XacNhanMatKhau.Margin = new Padding(3, 4, 3, 4);
+            txt_XacNhanMatKhau.Name = "txt_XacNhanMatKhau";
+            txt_XacNhanMatKhau.Size = new Size(358, 34);
+            txt_XacNhanMatKhau.TabIndex = 8;
+            // 
+            // txt_MatKhauMoi
+            // 
+            txt_MatKhauMoi.Font = new Font("Segoe UI", 12F);
+            txt_MatKhauMoi.Location = new Point(338, 237);
+            txt_MatKhauMoi.Margin = new Padding(3, 4, 3, 4);
+            txt_MatKhauMoi.Name = "txt_MatKhauMoi";
+            txt_MatKhauMoi.Size = new Size(358, 34);
+            txt_MatKhauMoi.TabIndex = 7;
+            // 
+            // txt_MatKhauCu
+            // 
+            txt_MatKhauCu.Font = new Font("Segoe UI", 12F);
+            txt_MatKhauCu.Location = new Point(338, 179);
+            txt_MatKhauCu.Margin = new Padding(3, 4, 3, 4);
+            txt_MatKhauCu.Name = "txt_MatKhauCu";
+            txt_MatKhauCu.Size = new Size(358, 34);
+            txt_MatKhauCu.TabIndex = 6;
+            // 
+            // lb_XacNhanMatKhau
+            // 
+            lb_XacNhanMatKhau.AutoSize = true;
+            lb_XacNhanMatKhau.Font = new Font("Segoe UI", 12F);
+            lb_XacNhanMatKhau.Location = new Point(89, 308);
+            lb_XacNhanMatKhau.Name = "lb_XacNhanMatKhau";
+            lb_XacNhanMatKhau.Size = new Size(220, 28);
+            lb_XacNhanMatKhau.TabIndex = 5;
+            lb_XacNhanMatKhau.Text = "Xác nhận Mật Khẩu Mới";
+            // 
+            // lb_MatKhauMoi
+            // 
+            lb_MatKhauMoi.AutoSize = true;
+            lb_MatKhauMoi.Font = new Font("Segoe UI", 12F);
+            lb_MatKhauMoi.Location = new Point(89, 248);
+            lb_MatKhauMoi.Name = "lb_MatKhauMoi";
+            lb_MatKhauMoi.Size = new Size(135, 28);
+            lb_MatKhauMoi.TabIndex = 4;
+            lb_MatKhauMoi.Text = "Mật Khẩu mới";
+            // 
+            // lb_MatKhauCu
+            // 
+            lb_MatKhauCu.AutoSize = true;
+            lb_MatKhauCu.Font = new Font("Segoe UI", 12F);
+            lb_MatKhauCu.Location = new Point(89, 189);
+            lb_MatKhauCu.Name = "lb_MatKhauCu";
+            lb_MatKhauCu.Size = new Size(124, 28);
+            lb_MatKhauCu.TabIndex = 3;
+            lb_MatKhauCu.Text = "Mật Khẩu Cũ";
+            // 
+            // lb_EditEmail
+            // 
+            lb_EditEmail.AutoSize = true;
+            lb_EditEmail.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lb_EditEmail.Location = new Point(66, 459);
+            lb_EditEmail.Name = "lb_EditEmail";
+            lb_EditEmail.Size = new Size(103, 28);
+            lb_EditEmail.TabIndex = 2;
+            lb_EditEmail.Text = "Đổi Email";
+            // 
+            // lb_EditMatKhau
+            // 
+            lb_EditMatKhau.AutoSize = true;
+            lb_EditMatKhau.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lb_EditMatKhau.Location = new Point(66, 133);
+            lb_EditMatKhau.Name = "lb_EditMatKhau";
+            lb_EditMatKhau.Size = new Size(140, 28);
+            lb_EditMatKhau.TabIndex = 1;
+            lb_EditMatKhau.Text = "Đổi mật khẩu";
+            // 
+            // lb_BaoMat
+            // 
+            lb_BaoMat.AutoSize = true;
+            lb_BaoMat.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lb_BaoMat.Location = new Point(24, 31);
+            lb_BaoMat.Name = "lb_BaoMat";
+            lb_BaoMat.Size = new Size(178, 46);
+            lb_BaoMat.TabIndex = 0;
+            lb_BaoMat.Text = "BẢO MẬT";
+            // 
+            // pnl_TaiKhoan
+            // 
+            pnl_TaiKhoan.BackColor = Color.White;
+            pnl_TaiKhoan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_TaiKhoan.Controls.Add(txt_EditInfo);
+            pnl_TaiKhoan.Controls.Add(txt_EditUser);
+            pnl_TaiKhoan.Controls.Add(txt_EditDisplayUser);
+            pnl_TaiKhoan.Controls.Add(lb_EditInfo);
+            pnl_TaiKhoan.Controls.Add(lb_EditUser);
+            pnl_TaiKhoan.Controls.Add(lb_EditDisplayUser);
+            pnl_TaiKhoan.Controls.Add(lb_ThongTinCaNhan);
+            pnl_TaiKhoan.Controls.Add(btn_LuuInfo);
+            pnl_TaiKhoan.Controls.Add(txt_Info);
+            pnl_TaiKhoan.Controls.Add(ln_DisplayUsername);
+            pnl_TaiKhoan.Controls.Add(lb_Info);
+            pnl_TaiKhoan.Controls.Add(ln_UserEmail);
+            pnl_TaiKhoan.Controls.Add(lb_Username);
+            pnl_TaiKhoan.Controls.Add(pictureBox1);
+            pnl_TaiKhoan.Controls.Add(lb_TieuDeTaiKhoan);
+            pnl_TaiKhoan.Dock = DockStyle.Fill;
+            pnl_TaiKhoan.Location = new Point(164, 0);
+            pnl_TaiKhoan.Margin = new Padding(3, 4, 3, 4);
+            pnl_TaiKhoan.Name = "pnl_TaiKhoan";
+            pnl_TaiKhoan.Size = new Size(891, 809);
+            pnl_TaiKhoan.TabIndex = 1;
+            // 
+            // txt_EditInfo
+            // 
+            txt_EditInfo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_EditInfo.Font = new Font("Segoe UI", 12F);
+            txt_EditInfo.Location = new Point(274, 615);
+            txt_EditInfo.Margin = new Padding(3, 4, 3, 4);
+            txt_EditInfo.Name = "txt_EditInfo";
+            txt_EditInfo.Size = new Size(565, 65);
+            txt_EditInfo.TabIndex = 16;
+            txt_EditInfo.Text = "";
+            // 
+            // txt_EditUser
+            // 
+            txt_EditUser.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_EditUser.Font = new Font("Segoe UI", 12F);
+            txt_EditUser.Location = new Point(274, 560);
+            txt_EditUser.Margin = new Padding(3, 4, 3, 4);
+            txt_EditUser.Name = "txt_EditUser";
+            txt_EditUser.Size = new Size(565, 34);
+            txt_EditUser.TabIndex = 15;
+            // 
+            // txt_EditDisplayUser
+            // 
+            txt_EditDisplayUser.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_EditDisplayUser.Font = new Font("Segoe UI", 12F);
+            txt_EditDisplayUser.Location = new Point(274, 501);
+            txt_EditDisplayUser.Margin = new Padding(3, 4, 3, 4);
+            txt_EditDisplayUser.Name = "txt_EditDisplayUser";
+            txt_EditDisplayUser.Size = new Size(565, 34);
+            txt_EditDisplayUser.TabIndex = 14;
+            // 
+            // lb_EditInfo
+            // 
+            lb_EditInfo.AutoSize = true;
+            lb_EditInfo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lb_EditInfo.Location = new Point(46, 612);
+            lb_EditInfo.Name = "lb_EditInfo";
+            lb_EditInfo.Size = new Size(202, 28);
+            lb_EditInfo.TabIndex = 13;
+            lb_EditInfo.Text = "Thông tin giới thiệu";
+            // 
+            // lb_EditUser
+            // 
+            lb_EditUser.AutoSize = true;
+            lb_EditUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lb_EditUser.Location = new Point(46, 557);
+            lb_EditUser.Name = "lb_EditUser";
+            lb_EditUser.Size = new Size(161, 28);
+            lb_EditUser.TabIndex = 12;
+            lb_EditUser.Text = "Tên người dùng";
+            // 
+            // lb_EditDisplayUser
+            // 
+            lb_EditDisplayUser.AutoSize = true;
+            lb_EditDisplayUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lb_EditDisplayUser.Location = new Point(46, 499);
+            lb_EditDisplayUser.Name = "lb_EditDisplayUser";
+            lb_EditDisplayUser.Size = new Size(124, 28);
+            lb_EditDisplayUser.TabIndex = 11;
+            lb_EditDisplayUser.Text = "Tên hiển thị";
+            // 
+            // lb_ThongTinCaNhan
+            // 
+            lb_ThongTinCaNhan.AutoSize = true;
+            lb_ThongTinCaNhan.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lb_ThongTinCaNhan.Location = new Point(24, 425);
+            lb_ThongTinCaNhan.Name = "lb_ThongTinCaNhan";
+            lb_ThongTinCaNhan.Size = new Size(221, 32);
+            lb_ThongTinCaNhan.TabIndex = 10;
+            lb_ThongTinCaNhan.Text = "Thông tin cá nhân";
+            // 
+            // btn_LuuInfo
+            // 
+            btn_LuuInfo.Anchor = AnchorStyles.Top;
+            btn_LuuInfo.BackColor = Color.FromArgb(37, 99, 235);
+            btn_LuuInfo.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btn_LuuInfo.Location = new Point(171, 720);
+            btn_LuuInfo.Margin = new Padding(3, 4, 3, 4);
+            btn_LuuInfo.Name = "btn_LuuInfo";
+            btn_LuuInfo.Size = new Size(565, 48);
+            btn_LuuInfo.TabIndex = 9;
+            btn_LuuInfo.Text = "LƯU THAY ĐỔI";
+            btn_LuuInfo.UseVisualStyleBackColor = true;
+            // 
+            // txt_Info
+            // 
+            txt_Info.Anchor = AnchorStyles.Top;
+            txt_Info.Location = new Point(171, 355);
+            txt_Info.Margin = new Padding(3, 4, 3, 4);
+            txt_Info.Name = "txt_Info";
+            txt_Info.ReadOnly = true;
+            txt_Info.Size = new Size(564, 65);
+            txt_Info.TabIndex = 8;
+            txt_Info.Text = "";
+            // 
+            // ln_DisplayUsername
+            // 
+            ln_DisplayUsername.Anchor = AnchorStyles.Top;
+            ln_DisplayUsername.AutoSize = true;
+            ln_DisplayUsername.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+            ln_DisplayUsername.Location = new Point(338, 201);
+            ln_DisplayUsername.Name = "ln_DisplayUsername";
+            ln_DisplayUsername.Size = new Size(290, 40);
+            ln_DisplayUsername.TabIndex = 7;
+            ln_DisplayUsername.Text = "DISPLAYUSERNAME";
+            // 
+            // lb_Info
+            // 
+            lb_Info.Anchor = AnchorStyles.Top;
+            lb_Info.AutoSize = true;
+            lb_Info.Font = new Font("Segoe UI", 17F);
+            lb_Info.Location = new Point(338, 309);
+            lb_Info.Name = "lb_Info";
+            lb_Info.Size = new Size(280, 40);
+            lb_Info.TabIndex = 6;
+            lb_Info.Text = "Thông Tin Giới Thiệu";
+            // 
+            // ln_UserEmail
+            // 
+            ln_UserEmail.Anchor = AnchorStyles.Top;
+            ln_UserEmail.AutoSize = true;
+            ln_UserEmail.Font = new Font("Segoe UI", 13F);
+            ln_UserEmail.Location = new Point(379, 276);
+            ln_UserEmail.Name = "ln_UserEmail";
+            ln_UserEmail.Size = new Size(178, 30);
+            ln_UserEmail.TabIndex = 5;
+            ln_UserEmail.Text = "User@gmail.com";
+            // 
+            // lb_Username
+            // 
+            lb_Username.Anchor = AnchorStyles.Top;
+            lb_Username.AutoSize = true;
+            lb_Username.Font = new Font("Segoe UI", 13F);
+            lb_Username.Location = new Point(406, 243);
+            lb_Username.Name = "lb_Username";
+            lb_Username.Size = new Size(125, 30);
+            lb_Username.TabIndex = 4;
+            lb_Username.Text = "USERNAME";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top;
+            pictureBox1.BackColor = SystemColors.ActiveCaption;
+            pictureBox1.Location = new Point(426, 91);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(80, 93);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
+            // 
+            // lb_TieuDeTaiKhoan
+            // 
+            lb_TieuDeTaiKhoan.AutoSize = true;
+            lb_TieuDeTaiKhoan.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lb_TieuDeTaiKhoan.ForeColor = Color.FromArgb(15, 23, 42);
+            lb_TieuDeTaiKhoan.Location = new Point(24, 31);
+            lb_TieuDeTaiKhoan.Name = "lb_TieuDeTaiKhoan";
+            lb_TieuDeTaiKhoan.Size = new Size(207, 46);
+            lb_TieuDeTaiKhoan.TabIndex = 0;
+            lb_TieuDeTaiKhoan.Text = "TÀI KHOẢN";
+            // 
+            // pnl_DanhMucCaiDat
+            // 
+            pnl_DanhMucCaiDat.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_DanhMucCaiDat.BorderStyle = BorderStyle.FixedSingle;
+            pnl_DanhMucCaiDat.Controls.Add(lb_MenuCaiDat);
+            pnl_DanhMucCaiDat.Controls.Add(btn_BaoMat);
+            pnl_DanhMucCaiDat.Controls.Add(btn_TaiKhoan);
+            pnl_DanhMucCaiDat.Dock = DockStyle.Left;
+            pnl_DanhMucCaiDat.Location = new Point(0, 0);
+            pnl_DanhMucCaiDat.Margin = new Padding(3, 4, 3, 4);
+            pnl_DanhMucCaiDat.Name = "pnl_DanhMucCaiDat";
+            pnl_DanhMucCaiDat.Size = new Size(164, 809);
+            pnl_DanhMucCaiDat.TabIndex = 0;
+            // 
+            // lb_MenuCaiDat
+            // 
+            lb_MenuCaiDat.AutoSize = true;
+            lb_MenuCaiDat.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lb_MenuCaiDat.Location = new Point(24, 15);
+            lb_MenuCaiDat.Name = "lb_MenuCaiDat";
+            lb_MenuCaiDat.Size = new Size(124, 37);
+            lb_MenuCaiDat.TabIndex = 5;
+            lb_MenuCaiDat.Text = "CÀI ĐẶT";
+            // 
+            // btn_BaoMat
+            // 
+            btn_BaoMat.FlatAppearance.BorderSize = 0;
+            btn_BaoMat.FlatStyle = FlatStyle.Flat;
+            btn_BaoMat.Location = new Point(-1, 133);
+            btn_BaoMat.Margin = new Padding(3, 4, 3, 4);
+            btn_BaoMat.Name = "btn_BaoMat";
+            btn_BaoMat.Size = new Size(165, 60);
+            btn_BaoMat.TabIndex = 4;
+            btn_BaoMat.Text = "Bảo Mật";
+            btn_BaoMat.UseVisualStyleBackColor = true;
+            btn_BaoMat.Click += btn_BaoMat_Click;
+            // 
+            // btn_TaiKhoan
+            // 
+            btn_TaiKhoan.FlatAppearance.BorderSize = 0;
+            btn_TaiKhoan.FlatStyle = FlatStyle.Flat;
+            btn_TaiKhoan.Location = new Point(-1, 65);
+            btn_TaiKhoan.Margin = new Padding(3, 4, 3, 4);
+            btn_TaiKhoan.Name = "btn_TaiKhoan";
+            btn_TaiKhoan.Size = new Size(165, 60);
+            btn_TaiKhoan.TabIndex = 2;
+            btn_TaiKhoan.Text = "Tài Khoản";
+            btn_TaiKhoan.UseVisualStyleBackColor = true;
+            btn_TaiKhoan.Click += btn_TaiKhoan_Click;
+            // 
+>>>>>>> Stashed changes
             // pnl_Friend
             // 
             pnl_Friend.BackColor = Color.RosyBrown;
             pnl_Friend.Dock = DockStyle.Fill;
+<<<<<<< Updated upstream
             pnl_Friend.Location = new Point(0, 0);
             pnl_Friend.Name = "pnl_Friend";
             pnl_Friend.Size = new Size(1048, 607);
             pnl_Friend.TabIndex = 8;
+=======
+            pnl_Friend.Location = new Point(143, 0);
+            pnl_Friend.Margin = new Padding(3, 4, 3, 4);
+            pnl_Friend.Name = "pnl_Friend";
+            pnl_Friend.Size = new Size(1055, 809);
+            pnl_Friend.TabIndex = 9;
+            pnl_Friend.Visible = false;
+>>>>>>> Stashed changes
             // 
             // pnl_GroupChat
             // 
+<<<<<<< Updated upstream
             pnl_GroupChat.BackColor = SystemColors.ActiveCaption;
             pnl_GroupChat.Dock = DockStyle.Fill;
             pnl_GroupChat.Location = new Point(0, 0);
             pnl_GroupChat.Name = "pnl_GroupChat";
             pnl_GroupChat.Size = new Size(1048, 607);
             pnl_GroupChat.TabIndex = 9;
+=======
+            pnl_DanhSachBan.BackColor = Color.White;
+            pnl_DanhSachBan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_DanhSachBan.Controls.Add(flp_DanhSachban);
+            pnl_DanhSachBan.Controls.Add(pnl_TimKiemBan);
+            pnl_DanhSachBan.Dock = DockStyle.Fill;
+            pnl_DanhSachBan.Location = new Point(0, 177);
+            pnl_DanhSachBan.Margin = new Padding(3, 4, 3, 4);
+            pnl_DanhSachBan.Name = "pnl_DanhSachBan";
+            pnl_DanhSachBan.Size = new Size(1055, 632);
+            pnl_DanhSachBan.TabIndex = 1;
+            // 
+            // flp_DanhSachban
+            // 
+            flp_DanhSachban.Dock = DockStyle.Fill;
+            flp_DanhSachban.Location = new Point(0, 96);
+            flp_DanhSachban.Margin = new Padding(3, 4, 3, 4);
+            flp_DanhSachban.Name = "flp_DanhSachban";
+            flp_DanhSachban.Size = new Size(1053, 534);
+            flp_DanhSachban.TabIndex = 1;
+            // 
+            // pnl_TimKiemBan
+            // 
+            pnl_TimKiemBan.Controls.Add(txt_TimKiemBan);
+            pnl_TimKiemBan.Dock = DockStyle.Top;
+            pnl_TimKiemBan.Location = new Point(0, 0);
+            pnl_TimKiemBan.Margin = new Padding(3, 4, 3, 4);
+            pnl_TimKiemBan.Name = "pnl_TimKiemBan";
+            pnl_TimKiemBan.Size = new Size(1053, 96);
+            pnl_TimKiemBan.TabIndex = 0;
+            // 
+            // txt_TimKiemBan
+            // 
+            txt_TimKiemBan.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_TimKiemBan.Font = new Font("Segoe UI", 16F);
+            txt_TimKiemBan.Location = new Point(24, 25);
+            txt_TimKiemBan.Margin = new Padding(3, 4, 3, 4);
+            txt_TimKiemBan.Name = "txt_TimKiemBan";
+            txt_TimKiemBan.PlaceholderText = "Tìm kiếm bạn bè";
+            txt_TimKiemBan.Size = new Size(1005, 43);
+            txt_TimKiemBan.TabIndex = 0;
+            // 
+            // pnl_LoiMoiKetBan
+            // 
+            pnl_LoiMoiKetBan.BackColor = Color.White;
+            pnl_LoiMoiKetBan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_LoiMoiKetBan.Controls.Add(flp_LoiMoiKetBan);
+            pnl_LoiMoiKetBan.Dock = DockStyle.Fill;
+            pnl_LoiMoiKetBan.Location = new Point(0, 177);
+            pnl_LoiMoiKetBan.Margin = new Padding(3, 4, 3, 4);
+            pnl_LoiMoiKetBan.Name = "pnl_LoiMoiKetBan";
+            pnl_LoiMoiKetBan.Size = new Size(1055, 632);
+            pnl_LoiMoiKetBan.TabIndex = 0;
+            // 
+            // flp_LoiMoiKetBan
+            // 
+            flp_LoiMoiKetBan.Dock = DockStyle.Fill;
+            flp_LoiMoiKetBan.Location = new Point(0, 0);
+            flp_LoiMoiKetBan.Margin = new Padding(3, 4, 3, 4);
+            flp_LoiMoiKetBan.Name = "flp_LoiMoiKetBan";
+            flp_LoiMoiKetBan.Size = new Size(1053, 630);
+            flp_LoiMoiKetBan.TabIndex = 0;
+            // 
+            // pnl_FriendHeader
+            // 
+            pnl_FriendHeader.BackColor = Color.White;
+            pnl_FriendHeader.BorderStyle = BorderStyle.FixedSingle;
+            pnl_FriendHeader.Controls.Add(btn_LoiMoiKetBan);
+            pnl_FriendHeader.Controls.Add(btn_DanhSachBan);
+            pnl_FriendHeader.Controls.Add(btn_ThemBanBe);
+            pnl_FriendHeader.Controls.Add(lb_TieuDeBanBe);
+            pnl_FriendHeader.Dock = DockStyle.Top;
+            pnl_FriendHeader.Location = new Point(0, 0);
+            pnl_FriendHeader.Margin = new Padding(3, 4, 3, 4);
+            pnl_FriendHeader.Name = "pnl_FriendHeader";
+            pnl_FriendHeader.Size = new Size(1055, 177);
+            pnl_FriendHeader.TabIndex = 0;
+            // 
+            // btn_LoiMoiKetBan
+            // 
+            btn_LoiMoiKetBan.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_LoiMoiKetBan.FlatStyle = FlatStyle.Flat;
+            btn_LoiMoiKetBan.Location = new Point(160, 116);
+            btn_LoiMoiKetBan.Margin = new Padding(3, 4, 3, 4);
+            btn_LoiMoiKetBan.Name = "btn_LoiMoiKetBan";
+            btn_LoiMoiKetBan.Size = new Size(102, 47);
+            btn_LoiMoiKetBan.TabIndex = 3;
+            btn_LoiMoiKetBan.Text = "Lời Mời";
+            btn_LoiMoiKetBan.UseVisualStyleBackColor = true;
+            btn_LoiMoiKetBan.Click += btn_LoiMoiKetBan_Click;
+            // 
+            // btn_DanhSachBan
+            // 
+            btn_DanhSachBan.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_DanhSachBan.FlatStyle = FlatStyle.Flat;
+            btn_DanhSachBan.Location = new Point(25, 116);
+            btn_DanhSachBan.Margin = new Padding(3, 4, 3, 4);
+            btn_DanhSachBan.Name = "btn_DanhSachBan";
+            btn_DanhSachBan.Size = new Size(99, 47);
+            btn_DanhSachBan.TabIndex = 2;
+            btn_DanhSachBan.Text = "Bạn Bè";
+            btn_DanhSachBan.UseVisualStyleBackColor = true;
+            btn_DanhSachBan.Click += btn_DanhSachBan_Click;
+            // 
+            // btn_ThemBanBe
+            // 
+            btn_ThemBanBe.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_ThemBanBe.BackColor = Color.FromArgb(37, 99, 235);
+            btn_ThemBanBe.FlatAppearance.BorderSize = 0;
+            btn_ThemBanBe.FlatStyle = FlatStyle.Flat;
+            btn_ThemBanBe.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            btn_ThemBanBe.ForeColor = Color.White;
+            btn_ThemBanBe.Location = new Point(897, 32);
+            btn_ThemBanBe.Margin = new Padding(3, 4, 3, 4);
+            btn_ThemBanBe.Name = "btn_ThemBanBe";
+            btn_ThemBanBe.Size = new Size(131, 59);
+            btn_ThemBanBe.TabIndex = 1;
+            btn_ThemBanBe.Text = "Thêm Bạn";
+            btn_ThemBanBe.UseVisualStyleBackColor = true;
+            // 
+            // lb_TieuDeBanBe
+            // 
+            lb_TieuDeBanBe.AutoSize = true;
+            lb_TieuDeBanBe.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            lb_TieuDeBanBe.Location = new Point(24, 31);
+            lb_TieuDeBanBe.Name = "lb_TieuDeBanBe";
+            lb_TieuDeBanBe.Size = new Size(142, 46);
+            lb_TieuDeBanBe.TabIndex = 0;
+            lb_TieuDeBanBe.Text = "BẠN BÈ";
+>>>>>>> Stashed changes
             // 
             // GiaoDien
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< Updated upstream
             ClientSize = new Size(1048, 607);
             Controls.Add(pnl_Chat);
             Controls.Add(pnl_Menu);
             Controls.Add(pnl_GroupChat);
             Controls.Add(pnl_Friend);
             Controls.Add(pnl_Setting);
+=======
+            ClientSize = new Size(1198, 809);
+            Controls.Add(pnl_Friend);
+            Controls.Add(pnl_Setting);
+            Controls.Add(pnl_Chat);
+            Controls.Add(pnl_Menu);
+            Margin = new Padding(3, 4, 3, 4);
+>>>>>>> Stashed changes
             Name = "GiaoDien";
             Text = "Form1";
             pnl_Menu.ResumeLayout(false);
