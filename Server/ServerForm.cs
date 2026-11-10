@@ -21,6 +21,16 @@ namespace Chat_room_test_TCP
         public ServerForm()
         {
             InitializeComponent();
+
+            // Khởi tạo phòng chat tổng.
+            ChatRoom globalRoom = new ChatRoom(
+                "GLOBAL",
+                "Nhóm chat tổng",
+                ChatRoomType.Global
+            );
+
+            rooms.Add(globalRoom.RoomId, globalRoom);
+            LogServer($"Created room: {globalRoom.RoomName}");
         }
 
         private TcpListener server;
@@ -29,6 +39,8 @@ namespace Chat_room_test_TCP
         private Dictionary<TcpClient, string> clientNames = new Dictionary<TcpClient, string>();
 
         private readonly object clientStateLock = new object();
+        // Quản lý danh sách phòng chat.
+        private readonly Dictionary<string, ChatRoom> rooms = new Dictionary<string, ChatRoom>();
 
         private readonly Dictionary<TcpClient, SemaphoreSlim> clientWriteLocks = new Dictionary<TcpClient, SemaphoreSlim>();
 
@@ -184,16 +196,47 @@ namespace Chat_room_test_TCP
                                 string displayName = accountFields[2];
 
                                 // Chỉ tạo phiên khi xác thực thành công.
+
+                                // Chỉ tạo phiên khi xác thực thành công.
+                                UserSession newSession = new UserSession(
+                                    authenticatedUsername,
+                                    displayName,
+                                    client);
+
+                                // Thêm session và kết nối vào phòng GLOBAL.
+                                bool joinedGlobal;
+
                                 lock (clientStateLock)
                                 {
-                                    sessions[client] = new UserSession(
-                                        authenticatedUsername,
-                                        displayName,
-                                        client);
+                                    sessions[client] = newSession;
+
+                                    joinedGlobal = rooms["GLOBAL"].AddMember(client);
                                 }
 
+                                if (!joinedGlobal)
+                                {
+                                    lock (clientStateLock)
+                                    {
+                                        sessions.Remove(client);
+                                    }
+
+                                    await writer.WriteLineAsync(
+                                        "LOGIN_RESULT|FAIL|JOIN_GLOBAL_FAILED");
+
+                                    continue;
+                                }
+
+                                // Thông báo đăng nhập thành công.
                                 await writer.WriteLineAsync(
                                     $"LOGIN_RESULT|OK|{authenticatedUsername}|{displayName}");
+
+                                LogServer(
+                                    $"Login success: {authenticatedUsername} - " +
+                                    $"{client.Client.RemoteEndPoint}");
+
+                                LogServer(
+                                    $"{displayName} automatically joined GLOBAL");
+
 
                                 LogServer(
                                     $"Login success: {authenticatedUsername} - " +
@@ -209,11 +252,6 @@ namespace Chat_room_test_TCP
 
                             continue;
                         }
-
-
-                        // LOGOUT: đăng xuất khỏi tài khoản
-                        //Theo code server hiện tại 29/10/2026, LOGOUT sẽ đóng kết nối TCP, chứ chưa có hệ thống phiên đăng nhập để thu hồi.
-                        //Vì vậy, đây là đăng xuất ở mức giao thức/kết nối, chưa phải quản lý phiên tài khoản hoàn chỉnh.
 
 
                         else if (command == "LOGOUT")
@@ -474,6 +512,7 @@ namespace Chat_room_test_TCP
                     }
 
                     // Dọn trạng thái phòng chat và write lock.
+                    rooms["GLOBAL"].RemoveMember(client);
                     clients.Remove(client);
                     clientNames.Remove(client);
                     clientWriteLocks.Remove(client);
