@@ -23,6 +23,8 @@ namespace ClientForm
             this.BackColor = AppColors.Background;
             ChonNutMenu(btn_Chat);
             ChuyenPanelMenu(pnl_Chat);
+
+            HienThiPhongChatTong();
         }
 
 
@@ -192,6 +194,34 @@ namespace ClientForm
             btn_LogOut.ForeColor = AppColors.TextSecondary;
         }
 
+        private void HienThiPhongChatTong()
+        {
+            Panel item = new Panel();
+
+            item.Width = flp_DanhSachChat.ClientSize.Width - 5;
+            item.Height = 65;
+            item.BackColor = Color.White;
+            item.Margin = new Padding(0, 0, 0, 5);
+            item.Cursor = Cursors.Hand;
+
+            Label lbTenPhong = new Label();
+            lbTenPhong.Text = "Nhóm chat tổng";
+            lbTenPhong.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            lbTenPhong.Location = new Point(15, 10);
+            lbTenPhong.AutoSize = true;
+
+            Label lbMoTa = new Label();
+            lbMoTa.Text = "Tất cả mọi người";
+            lbMoTa.Font = new Font("Segoe UI", 8);
+            lbMoTa.ForeColor = Color.Gray;
+            lbMoTa.Location = new Point(15, 35);
+            lbMoTa.AutoSize = true;
+
+            item.Controls.Add(lbTenPhong);
+            item.Controls.Add(lbMoTa);
+
+            flp_DanhSachChat.Controls.Add(item);
+        }
         private void pnl_Chatting_Paint(object sender, PaintEventArgs e)
         {
 
