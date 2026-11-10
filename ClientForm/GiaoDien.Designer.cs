@@ -34,13 +34,23 @@
             pnl_Menu = new Panel();
             btn_LogOut = new Button();
             pnl_Chat = new Panel();
-            pnl_HoiThoai = new Panel();
-            flp_TinNhan = new FlowLayoutPanel();
-            pnl_Nhap = new Panel();
+            pnl_HoiThoaiNhom = new Panel();
+            flp_TinNhamNhom = new FlowLayoutPanel();
+            pnl_NhapTinNhanNhom = new Panel();
+            btn_DinhKemNhom = new Button();
+            btn_GuiNhom = new Button();
+            txt_NoiDungNhom = new TextBox();
+            pnl_ChatHeaderNhom = new Panel();
+            lb_TrangThaiOnlineNhom = new Label();
+            lb_TenNhom = new Label();
+            pic_Nhom = new PictureBox();
+            pnl_HoiThoaiCaNhan = new Panel();
+            flp_TinNhanCaNhan = new FlowLayoutPanel();
+            pnl_NhapTinNhan = new Panel();
             btn_DinhKem = new Button();
             btn_Gui = new Button();
             txt_NoiDung = new TextBox();
-            pnl_ChatHeader = new Panel();
+            pnl_ChatHeaderUser = new Panel();
             btn_GoiThoai = new Button();
             lb_TrangThaiOnline = new Label();
             lb_TenUser = new Label();
@@ -48,6 +58,7 @@
             pnl_List = new Panel();
             flp_DanhSachChat = new FlowLayoutPanel();
             pnl_TimKiem = new Panel();
+            btn_Nhom = new Button();
             txt_TimKiem = new TextBox();
             pnl_TieuDe = new Panel();
             lb_TieuDe = new Label();
@@ -100,9 +111,13 @@
             lb_TieuDeBanBe = new Label();
             pnl_Menu.SuspendLayout();
             pnl_Chat.SuspendLayout();
-            pnl_HoiThoai.SuspendLayout();
-            pnl_Nhap.SuspendLayout();
-            pnl_ChatHeader.SuspendLayout();
+            pnl_HoiThoaiNhom.SuspendLayout();
+            pnl_NhapTinNhanNhom.SuspendLayout();
+            pnl_ChatHeaderNhom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_Nhom).BeginInit();
+            pnl_HoiThoaiCaNhan.SuspendLayout();
+            pnl_NhapTinNhan.SuspendLayout();
+            pnl_ChatHeaderUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Avatar).BeginInit();
             pnl_List.SuspendLayout();
             pnl_TimKiem.SuspendLayout();
@@ -187,7 +202,8 @@
             // 
             // pnl_Chat
             // 
-            pnl_Chat.Controls.Add(pnl_HoiThoai);
+            pnl_Chat.Controls.Add(pnl_HoiThoaiNhom);
+            pnl_Chat.Controls.Add(pnl_HoiThoaiCaNhan);
             pnl_Chat.Controls.Add(pnl_List);
             pnl_Chat.Dock = DockStyle.Fill;
             pnl_Chat.Location = new Point(125, 0);
@@ -195,41 +211,153 @@
             pnl_Chat.Size = new Size(923, 607);
             pnl_Chat.TabIndex = 6;
             // 
-            // pnl_HoiThoai
+            // pnl_HoiThoaiNhom
             // 
-            pnl_HoiThoai.BackColor = Color.FromArgb(241, 245, 249);
-            pnl_HoiThoai.BorderStyle = BorderStyle.FixedSingle;
-            pnl_HoiThoai.Controls.Add(flp_TinNhan);
-            pnl_HoiThoai.Controls.Add(pnl_Nhap);
-            pnl_HoiThoai.Controls.Add(pnl_ChatHeader);
-            pnl_HoiThoai.Dock = DockStyle.Fill;
-            pnl_HoiThoai.Location = new Point(300, 0);
-            pnl_HoiThoai.Name = "pnl_HoiThoai";
-            pnl_HoiThoai.Size = new Size(623, 607);
-            pnl_HoiThoai.TabIndex = 1;
+            pnl_HoiThoaiNhom.BackColor = Color.FromArgb(241, 245, 249);
+            pnl_HoiThoaiNhom.BorderStyle = BorderStyle.FixedSingle;
+            pnl_HoiThoaiNhom.Controls.Add(flp_TinNhamNhom);
+            pnl_HoiThoaiNhom.Controls.Add(pnl_NhapTinNhanNhom);
+            pnl_HoiThoaiNhom.Controls.Add(pnl_ChatHeaderNhom);
+            pnl_HoiThoaiNhom.Dock = DockStyle.Fill;
+            pnl_HoiThoaiNhom.Location = new Point(300, 0);
+            pnl_HoiThoaiNhom.Name = "pnl_HoiThoaiNhom";
+            pnl_HoiThoaiNhom.Size = new Size(623, 607);
+            pnl_HoiThoaiNhom.TabIndex = 10;
             // 
-            // flp_TinNhan
+            // flp_TinNhamNhom
             // 
-            flp_TinNhan.AutoScroll = true;
-            flp_TinNhan.Dock = DockStyle.Fill;
-            flp_TinNhan.FlowDirection = FlowDirection.TopDown;
-            flp_TinNhan.Location = new Point(0, 62);
-            flp_TinNhan.Name = "flp_TinNhan";
-            flp_TinNhan.Size = new Size(621, 475);
-            flp_TinNhan.TabIndex = 3;
-            flp_TinNhan.WrapContents = false;
+            flp_TinNhamNhom.Dock = DockStyle.Fill;
+            flp_TinNhamNhom.Location = new Point(0, 62);
+            flp_TinNhamNhom.Name = "flp_TinNhamNhom";
+            flp_TinNhamNhom.Size = new Size(621, 475);
+            flp_TinNhamNhom.TabIndex = 6;
             // 
-            // pnl_Nhap
+            // pnl_NhapTinNhanNhom
             // 
-            pnl_Nhap.BackColor = Color.FromArgb(255, 255, 255);
-            pnl_Nhap.Controls.Add(btn_DinhKem);
-            pnl_Nhap.Controls.Add(btn_Gui);
-            pnl_Nhap.Controls.Add(txt_NoiDung);
-            pnl_Nhap.Dock = DockStyle.Bottom;
-            pnl_Nhap.Location = new Point(0, 537);
-            pnl_Nhap.Name = "pnl_Nhap";
-            pnl_Nhap.Size = new Size(621, 68);
-            pnl_Nhap.TabIndex = 2;
+            pnl_NhapTinNhanNhom.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_NhapTinNhanNhom.Controls.Add(btn_DinhKemNhom);
+            pnl_NhapTinNhanNhom.Controls.Add(btn_GuiNhom);
+            pnl_NhapTinNhanNhom.Controls.Add(txt_NoiDungNhom);
+            pnl_NhapTinNhanNhom.Dock = DockStyle.Bottom;
+            pnl_NhapTinNhanNhom.Location = new Point(0, 537);
+            pnl_NhapTinNhanNhom.Name = "pnl_NhapTinNhanNhom";
+            pnl_NhapTinNhanNhom.Size = new Size(621, 68);
+            pnl_NhapTinNhanNhom.TabIndex = 5;
+            // 
+            // btn_DinhKemNhom
+            // 
+            btn_DinhKemNhom.Anchor = AnchorStyles.Left;
+            btn_DinhKemNhom.BackColor = Color.Transparent;
+            btn_DinhKemNhom.FlatAppearance.BorderSize = 0;
+            btn_DinhKemNhom.FlatStyle = FlatStyle.Flat;
+            btn_DinhKemNhom.ForeColor = Color.White;
+            btn_DinhKemNhom.Image = Properties.Resources.paperclip;
+            btn_DinhKemNhom.Location = new Point(5, 11);
+            btn_DinhKemNhom.Name = "btn_DinhKemNhom";
+            btn_DinhKemNhom.Size = new Size(56, 44);
+            btn_DinhKemNhom.TabIndex = 2;
+            btn_DinhKemNhom.UseVisualStyleBackColor = false;
+            // 
+            // btn_GuiNhom
+            // 
+            btn_GuiNhom.Anchor = AnchorStyles.Right;
+            btn_GuiNhom.BackColor = Color.FromArgb(37, 99, 235);
+            btn_GuiNhom.FlatAppearance.BorderSize = 0;
+            btn_GuiNhom.FlatStyle = FlatStyle.Flat;
+            btn_GuiNhom.ForeColor = Color.White;
+            btn_GuiNhom.Image = Properties.Resources.send;
+            btn_GuiNhom.Location = new Point(556, 11);
+            btn_GuiNhom.Name = "btn_GuiNhom";
+            btn_GuiNhom.Size = new Size(54, 44);
+            btn_GuiNhom.TabIndex = 1;
+            btn_GuiNhom.UseVisualStyleBackColor = false;
+            // 
+            // txt_NoiDungNhom
+            // 
+            txt_NoiDungNhom.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txt_NoiDungNhom.Location = new Point(67, 11);
+            txt_NoiDungNhom.Multiline = true;
+            txt_NoiDungNhom.Name = "txt_NoiDungNhom";
+            txt_NoiDungNhom.PlaceholderText = "Nhập tin nhắn. . .";
+            txt_NoiDungNhom.Size = new Size(483, 44);
+            txt_NoiDungNhom.TabIndex = 0;
+            // 
+            // pnl_ChatHeaderNhom
+            // 
+            pnl_ChatHeaderNhom.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_ChatHeaderNhom.Controls.Add(lb_TrangThaiOnlineNhom);
+            pnl_ChatHeaderNhom.Controls.Add(lb_TenNhom);
+            pnl_ChatHeaderNhom.Controls.Add(pic_Nhom);
+            pnl_ChatHeaderNhom.Dock = DockStyle.Top;
+            pnl_ChatHeaderNhom.Location = new Point(0, 0);
+            pnl_ChatHeaderNhom.Name = "pnl_ChatHeaderNhom";
+            pnl_ChatHeaderNhom.Size = new Size(621, 62);
+            pnl_ChatHeaderNhom.TabIndex = 1;
+            // 
+            // lb_TrangThaiOnlineNhom
+            // 
+            lb_TrangThaiOnlineNhom.AutoSize = true;
+            lb_TrangThaiOnlineNhom.ForeColor = Color.FromArgb(22, 163, 74);
+            lb_TrangThaiOnlineNhom.Location = new Point(84, 36);
+            lb_TrangThaiOnlineNhom.Name = "lb_TrangThaiOnlineNhom";
+            lb_TrangThaiOnlineNhom.Size = new Size(83, 15);
+            lb_TrangThaiOnlineNhom.TabIndex = 2;
+            lb_TrangThaiOnlineNhom.Text = "Online/Offline";
+            // 
+            // lb_TenNhom
+            // 
+            lb_TenNhom.AutoSize = true;
+            lb_TenNhom.Font = new Font("Segoe UI", 13F);
+            lb_TenNhom.Location = new Point(84, 8);
+            lb_TenNhom.Name = "lb_TenNhom";
+            lb_TenNhom.Size = new Size(98, 25);
+            lb_TenNhom.TabIndex = 1;
+            lb_TenNhom.Text = "GroupChat";
+            // 
+            // pic_Nhom
+            // 
+            pic_Nhom.BackColor = SystemColors.ActiveCaption;
+            pic_Nhom.Location = new Point(21, 11);
+            pic_Nhom.Name = "pic_Nhom";
+            pic_Nhom.Size = new Size(40, 40);
+            pic_Nhom.TabIndex = 0;
+            pic_Nhom.TabStop = false;
+            // 
+            // pnl_HoiThoaiCaNhan
+            // 
+            pnl_HoiThoaiCaNhan.BackColor = Color.FromArgb(241, 245, 249);
+            pnl_HoiThoaiCaNhan.BorderStyle = BorderStyle.FixedSingle;
+            pnl_HoiThoaiCaNhan.Controls.Add(flp_TinNhanCaNhan);
+            pnl_HoiThoaiCaNhan.Controls.Add(pnl_NhapTinNhan);
+            pnl_HoiThoaiCaNhan.Controls.Add(pnl_ChatHeaderUser);
+            pnl_HoiThoaiCaNhan.Dock = DockStyle.Fill;
+            pnl_HoiThoaiCaNhan.Location = new Point(300, 0);
+            pnl_HoiThoaiCaNhan.Name = "pnl_HoiThoaiCaNhan";
+            pnl_HoiThoaiCaNhan.Size = new Size(623, 607);
+            pnl_HoiThoaiCaNhan.TabIndex = 1;
+            // 
+            // flp_TinNhanCaNhan
+            // 
+            flp_TinNhanCaNhan.AutoScroll = true;
+            flp_TinNhanCaNhan.Dock = DockStyle.Fill;
+            flp_TinNhanCaNhan.FlowDirection = FlowDirection.TopDown;
+            flp_TinNhanCaNhan.Location = new Point(0, 62);
+            flp_TinNhanCaNhan.Name = "flp_TinNhanCaNhan";
+            flp_TinNhanCaNhan.Size = new Size(621, 475);
+            flp_TinNhanCaNhan.TabIndex = 3;
+            flp_TinNhanCaNhan.WrapContents = false;
+            // 
+            // pnl_NhapTinNhan
+            // 
+            pnl_NhapTinNhan.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_NhapTinNhan.Controls.Add(btn_DinhKem);
+            pnl_NhapTinNhan.Controls.Add(btn_Gui);
+            pnl_NhapTinNhan.Controls.Add(txt_NoiDung);
+            pnl_NhapTinNhan.Dock = DockStyle.Bottom;
+            pnl_NhapTinNhan.Location = new Point(0, 537);
+            pnl_NhapTinNhan.Name = "pnl_NhapTinNhan";
+            pnl_NhapTinNhan.Size = new Size(621, 68);
+            pnl_NhapTinNhan.TabIndex = 2;
             // 
             // btn_DinhKem
             // 
@@ -271,18 +399,18 @@
             txt_NoiDung.Size = new Size(483, 44);
             txt_NoiDung.TabIndex = 0;
             // 
-            // pnl_ChatHeader
+            // pnl_ChatHeaderUser
             // 
-            pnl_ChatHeader.BackColor = Color.FromArgb(255, 255, 255);
-            pnl_ChatHeader.Controls.Add(btn_GoiThoai);
-            pnl_ChatHeader.Controls.Add(lb_TrangThaiOnline);
-            pnl_ChatHeader.Controls.Add(lb_TenUser);
-            pnl_ChatHeader.Controls.Add(pic_Avatar);
-            pnl_ChatHeader.Dock = DockStyle.Top;
-            pnl_ChatHeader.Location = new Point(0, 0);
-            pnl_ChatHeader.Name = "pnl_ChatHeader";
-            pnl_ChatHeader.Size = new Size(621, 62);
-            pnl_ChatHeader.TabIndex = 0;
+            pnl_ChatHeaderUser.BackColor = Color.FromArgb(255, 255, 255);
+            pnl_ChatHeaderUser.Controls.Add(btn_GoiThoai);
+            pnl_ChatHeaderUser.Controls.Add(lb_TrangThaiOnline);
+            pnl_ChatHeaderUser.Controls.Add(lb_TenUser);
+            pnl_ChatHeaderUser.Controls.Add(pic_Avatar);
+            pnl_ChatHeaderUser.Dock = DockStyle.Top;
+            pnl_ChatHeaderUser.Location = new Point(0, 0);
+            pnl_ChatHeaderUser.Name = "pnl_ChatHeaderUser";
+            pnl_ChatHeaderUser.Size = new Size(621, 62);
+            pnl_ChatHeaderUser.TabIndex = 0;
             // 
             // btn_GoiThoai
             // 
@@ -341,21 +469,38 @@
             flp_DanhSachChat.AutoScroll = true;
             flp_DanhSachChat.Dock = DockStyle.Fill;
             flp_DanhSachChat.FlowDirection = FlowDirection.TopDown;
-            flp_DanhSachChat.Location = new Point(0, 87);
+            flp_DanhSachChat.Location = new Point(0, 128);
             flp_DanhSachChat.Name = "flp_DanhSachChat";
-            flp_DanhSachChat.Size = new Size(298, 518);
+            flp_DanhSachChat.Size = new Size(298, 477);
             flp_DanhSachChat.TabIndex = 2;
             flp_DanhSachChat.WrapContents = false;
             // 
             // pnl_TimKiem
             // 
+            pnl_TimKiem.Controls.Add(btn_Nhom);
             pnl_TimKiem.Controls.Add(txt_TimKiem);
             pnl_TimKiem.Dock = DockStyle.Top;
             pnl_TimKiem.ForeColor = Color.FromArgb(255, 255, 255);
             pnl_TimKiem.Location = new Point(0, 45);
             pnl_TimKiem.Name = "pnl_TimKiem";
-            pnl_TimKiem.Size = new Size(298, 42);
+            pnl_TimKiem.Size = new Size(298, 83);
             pnl_TimKiem.TabIndex = 1;
+            // 
+            // btn_Nhom
+            // 
+            btn_Nhom.BackColor = Color.Transparent;
+            btn_Nhom.FlatAppearance.BorderColor = Color.FromArgb(224, 224, 224);
+            btn_Nhom.FlatStyle = FlatStyle.Flat;
+            btn_Nhom.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Nhom.ForeColor = Color.Black;
+            btn_Nhom.Location = new Point(5, 40);
+            btn_Nhom.Name = "btn_Nhom";
+            btn_Nhom.Size = new Size(138, 36);
+            btn_Nhom.TabIndex = 1;
+            btn_Nhom.Text = "Nhóm Chat";
+            btn_Nhom.TextAlign = ContentAlignment.MiddleLeft;
+            btn_Nhom.UseVisualStyleBackColor = false;
+            btn_Nhom.MouseClick += btn_Nhom_MouseClick;
             // 
             // txt_TimKiem
             // 
@@ -920,19 +1065,25 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1048, 607);
+            Controls.Add(pnl_Chat);
             Controls.Add(pnl_Friend);
             Controls.Add(pnl_Setting);
-            Controls.Add(pnl_Chat);
             Controls.Add(pnl_Menu);
             Name = "GiaoDien";
             Text = "Form1";
             pnl_Menu.ResumeLayout(false);
             pnl_Chat.ResumeLayout(false);
-            pnl_HoiThoai.ResumeLayout(false);
-            pnl_Nhap.ResumeLayout(false);
-            pnl_Nhap.PerformLayout();
-            pnl_ChatHeader.ResumeLayout(false);
-            pnl_ChatHeader.PerformLayout();
+            pnl_HoiThoaiNhom.ResumeLayout(false);
+            pnl_NhapTinNhanNhom.ResumeLayout(false);
+            pnl_NhapTinNhanNhom.PerformLayout();
+            pnl_ChatHeaderNhom.ResumeLayout(false);
+            pnl_ChatHeaderNhom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_Nhom).EndInit();
+            pnl_HoiThoaiCaNhan.ResumeLayout(false);
+            pnl_NhapTinNhan.ResumeLayout(false);
+            pnl_NhapTinNhan.PerformLayout();
+            pnl_ChatHeaderUser.ResumeLayout(false);
+            pnl_ChatHeaderUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pic_Avatar).EndInit();
             pnl_List.ResumeLayout(false);
             pnl_TimKiem.ResumeLayout(false);
@@ -967,23 +1118,23 @@
         private Panel pnl_Chat;
         private Panel pnl_Setting;
         private Panel pnl_Friend;
-        private Panel pnl_HoiThoai;
+        private Panel pnl_HoiThoaiCaNhan;
         private Panel pnl_List;
         private Panel pnl_TieuDe;
         private Label lb_TieuDe;
         private Panel pnl_TimKiem;
         private FlowLayoutPanel flp_DanhSachChat;
         private TextBox txt_TimKiem;
-        private Panel pnl_ChatHeader;
+        private Panel pnl_ChatHeaderUser;
         private PictureBox pic_Avatar;
         private Label lb_TenUser;
         private Button btn_GoiThoai;
         private Label lb_TrangThaiOnline;
-        private Panel pnl_Nhap;
+        private Panel pnl_NhapTinNhan;
         private Button btn_DinhKem;
         private Button btn_Gui;
         private TextBox txt_NoiDung;
-        private FlowLayoutPanel flp_TinNhan;
+        private FlowLayoutPanel flp_TinNhanCaNhan;
         private Panel pnl_DanhMucCaiDat;
         private Button btn_TaiKhoan;
         private Label lb_MenuCaiDat;
@@ -1029,5 +1180,16 @@
         private TextBox txt_TimKiemBan;
         private Panel pnl_LoiMoiKetBan;
         private FlowLayoutPanel flp_LoiMoiKetBan;
+        private Panel pnl_HoiThoaiNhom;
+        private Panel pnl_ChatHeaderNhom;
+        private Label lb_TrangThaiOnlineNhom;
+        private Label lb_TenNhom;
+        private PictureBox pic_Nhom;
+        private Panel pnl_NhapTinNhanNhom;
+        private Button btn_DinhKemNhom;
+        private Button btn_GuiNhom;
+        private TextBox txt_NoiDungNhom;
+        private FlowLayoutPanel flp_TinNhamNhom;
+        private Button btn_Nhom;
     }
 }

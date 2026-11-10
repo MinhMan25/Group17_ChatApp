@@ -23,8 +23,6 @@ namespace ClientForm
             this.BackColor = AppColors.Background;
             ChonNutMenu(btn_Chat);
             ChuyenPanelMenu(pnl_Chat);
-
-            HienThiPhongChatTong();
         }
 
 
@@ -161,6 +159,7 @@ namespace ClientForm
             }
             PanelDuocChon.Visible = true;
         }
+
         private void btn_Chat_Click(object sender, EventArgs e)
         {
             ChonNutMenu(btn_Chat);
@@ -194,7 +193,7 @@ namespace ClientForm
             btn_LogOut.ForeColor = AppColors.TextSecondary;
         }
 
-        private void HienThiPhongChatTong()
+        /*private void HienThiPhongChatTong()
         {
             Panel item = new Panel();
 
@@ -221,7 +220,8 @@ namespace ClientForm
             item.Controls.Add(lbMoTa);
 
             flp_DanhSachChat.Controls.Add(item);
-        }
+        }*/
+
         private void pnl_Chatting_Paint(object sender, PaintEventArgs e)
         {
 
@@ -322,6 +322,22 @@ namespace ClientForm
         private void btn_DoiEmail_MouseLeave(object sender, EventArgs e)
         {
             btn_DoiEmail.BackColor = AppColors.Primary;
+        }
+
+        private void btn_Nhom_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(pnl_HoiThoaiCaNhan.Visible)
+            {
+                pnl_HoiThoaiCaNhan.Visible = false;
+                pnl_HoiThoaiNhom.Visible = true;
+                btn_Nhom.BackColor = AppColors.Selected;
+            }
+            else
+            {
+                pnl_HoiThoaiCaNhan.Visible = true;
+                pnl_HoiThoaiNhom.Visible = false;
+                btn_Nhom.BackColor = AppColors.Surface;
+            }
         }
     }
 }
