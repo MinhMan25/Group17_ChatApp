@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ClientForm/ClientForm.csproj" />
   <Project Path="Server/Server.csproj" Id="fe90d711-0e22-4706-82fb-cadfefe5d809" />
+  <Project Path="WebService/WebService.csproj" />
 </Solution>
