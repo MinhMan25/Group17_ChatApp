@@ -19,7 +19,6 @@ namespace ClientForm
             this.BackColor = AppColors.Background;
             this.FormBorderColor = AppColors.Border;
 
-            ChatClientManager.Client.LineReceived += Client_LineReceived;
         }
 
         private void btn_Register_MouseEnter(object sender, EventArgs e)
@@ -37,48 +36,6 @@ namespace ClientForm
         private void lkb_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-        }
-
-        private void Client_LineReceived(string message)
-        {
-            if (!message.StartsWith("REGISTER_RESULT|"))
-                return;
-
-            if (IsDisposed || !IsHandleCreated)
-                return;
-
-            BeginInvoke(new Action(() =>
-            {
-                btn_Register.Enabled = true;
-                string[] parts = message.Split('|');
-
-                if (parts.Length < 3)
-                    return;
-
-                if (parts[1] == "OK")
-                {
-                    MessageBox.Show(
-                        "Đăng ký tài khoản thành công!",
-                        "Zalu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-                else
-                {
-                    string errorMessage = parts[2] switch
-                    {
-                        "USERNAME_EXISTS" => "Tên tài khoản đã tồn tại.",
-                        "INVALID_DATA" => "Thông tin đăng ký không hợp lệ.",
-                        _ => "Đăng ký thất bại: " + parts[2]
-                    };
-
-                    MessageBox.Show(
-                        errorMessage,
-                        "Zalu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
-            }));
         }
 
         private string KiemTraMatKhau(string matKhau) //dành cho 3 cái kiểm tra, hợp lệ thỉ trả về "", không thì báo lỗi
@@ -126,30 +83,45 @@ namespace ClientForm
 
             string check = KiemtraUser(username) + KiemtraEmail(email) + KiemTraMatKhau(password);
             lb_SaiDinhDang.Text = check;
+            if (!string.IsNullOrEmpty(check))
+                return;
+
+            btn_Register.Enabled = false;
 
             try
             {
-                var client = ChatClientManager.Client;
-
-                if (!client.IsConnected)
+                await ApiClientManager.Api.RegisterAsync(username, email, password);
+                MessageBox.Show(
+                    "Đăng ký tài khoản thành công!",
+                    "Zalu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (ApiException ex)
+            {
+                string errorMessage = ex.Code switch
                 {
-                    await client.ConnectAsync("127.0.0.1", 8080);
-                }
+                    "USERNAME_EXISTS" => "Tên tài khoản đã tồn tại.",
+                    "EMAIL_EXISTS" => "Email đã được sử dụng.",
+                    "INVALID_USERNAME" or "INVALID_EMAIL" or "INVALID_PASSWORD" => ex.Message,
+                    "CANNOT_CONNECT" => "Không kết nối được WebService tại http://127.0.0.1:5000.",
+                    "TIMEOUT" => "WebService không phản hồi.",
+                    _ => ex.Message
+                };
 
-                btn_Register.Enabled = false;
-
-                await client.SendLineAsync(
-                    $"REGISTER|{username}|{email}|{password}");
+                MessageBox.Show(errorMessage, "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                btn_Register.Enabled = true;
-
                 MessageBox.Show(
-                    "Không thể gửi yêu cầu đăng ký.\n" + ex.Message,
+                    "Không thể đăng ký qua WebService.\n" + ex.Message,
                     "Zalu",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btn_Register.Enabled = true;
             }
         }
 

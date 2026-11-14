@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,73 +12,15 @@ namespace ClientForm
     public partial class GiaoDien : Form
     {
         private bool logoutRequestPending = false;
-        private bool logoutCompleted = false;
         public GiaoDien()
         {
             InitializeComponent();
-            ChatClientManager.Client.LineReceived += Client_LineReceived;
-            this.FormClosed += GiaoDien_FormClosed;
 
             this.BackColor = AppColors.Background;
             ChonNutMenu(btn_Chat);
             ChuyenPanelMenu(pnl_Chat);
         }
 
-
-        private void Client_LineReceived(string message)
-        {
-            if (!message.StartsWith("LOGOUT_RESULT|"))
-                return;
-
-            if (IsDisposed || !IsHandleCreated)
-                return;
-
-            BeginInvoke(new Action(() =>
-            {
-                if (IsDisposed || !logoutRequestPending)
-                    return;
-
-                string[] parts = message.Split('|');
-
-                logoutRequestPending = false;
-
-                if (parts.Length >= 3 && parts[1] == "OK")
-                {
-                    logoutCompleted = true;
-
-                    MessageBox.Show(
-                        "Đăng xuất thành công!",
-                        "Zalu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    // Server đã xác nhận đăng xuất.
-                    // Đóng kết nối vì server đã xử lý LOGOUT.
-                    ChatClientManager.Client.Disconnect();
-
-                    this.Hide();
-
-                    Login login = new Login();
-                    login.ShowDialog();
-
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(
-                        "Server không xác nhận được yêu cầu đăng xuất.",
-                        "Zalu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
-            }));
-        }
-
-        private void GiaoDien_FormClosed(
-            object? sender, FormClosedEventArgs e)
-        {
-            ChatClientManager.Client.LineReceived -= Client_LineReceived;
-        }
 
         private void ChonNutMenu(Button nutDuocChon)
         {
@@ -236,38 +177,47 @@ namespace ClientForm
 
         private async void btn_LogOut_Click(object sender, EventArgs e)
         {
-            var client = ChatClientManager.Client;
-
             if (logoutRequestPending)
                 return;
-
-            if (!client.IsConnected)
-            {
-                MessageBox.Show(
-                    "Không có kết nối đến server. Không thể xác nhận đăng xuất.",
-                    "Zalu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
 
             logoutRequestPending = true;
             btn_LogOut.Enabled = false;
 
             try
             {
-                await client.SendLineAsync("LOGOUT");
+                await ApiClientManager.Api.LogoutAsync();
+
+                MessageBox.Show(
+                    "Đăng xuất thành công!",
+                    "Zalu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                this.Hide();
+                Login login = new Login();
+                login.ShowDialog();
+                this.Close();
+            }
+            catch (ApiException ex)
+            {
+                MessageBox.Show(
+                    "Không thể đăng xuất qua WebService.\n" + ex.Message,
+                    "Lỗi kết nối",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                logoutRequestPending = false;
-                btn_LogOut.Enabled = true;
-
                 MessageBox.Show(
-                    "Gửi yêu cầu đăng xuất thất bại.\n" + ex.Message,
+                    "Đăng xuất thất bại.\n" + ex.Message,
                     "Lỗi kết nối",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+            finally
+            {
+                logoutRequestPending = false;
+                btn_LogOut.Enabled = true;
             }
         }
 

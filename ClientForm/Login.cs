@@ -16,61 +16,6 @@ namespace ClientForm
             txtbox_Password.PasswordChar = '*';
             btn_ShowPassword.Text = "🔒";
 
-            ChatClientManager.Client.LineReceived += Client_LineReceived;
-            this.FormClosed += Login_FormClosed;
-        }
-
-
-        private void Client_LineReceived(string message)
-        {
-            if (!message.StartsWith("LOGIN_RESULT|"))
-                return;
-
-            if (IsDisposed || !IsHandleCreated)
-                return;
-
-            BeginInvoke(new Action(() =>
-            {
-                if (IsDisposed)
-                    return;
-
-                loginRequestPending = false;
-                btn_Login.Enabled = true;
-
-                string[] parts = message.Split('|');
-
-                if (parts.Length >= 4 &&
-                    parts[1] == "OK")
-                {
-                    MessageBox.Show(
-                        "Đăng nhập thành công!",
-                        "Zalu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    this.Hide();
-
-                    GiaoDien giaoDien = new GiaoDien();
-                    giaoDien.ShowDialog();
-
-                    this.Close();
-                }
-                else if (parts.Length >= 3 &&
-                         parts[1] == "FAIL")
-                {
-                    MessageBox.Show(
-                        "Tên đăng nhập hoặc mật khẩu không đúng!",
-                        "Đăng nhập thất bại",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                }
-            }));
-        }
-
-        private void Login_FormClosed(
-            object? sender, FormClosedEventArgs e)
-        {
-            ChatClientManager.Client.LineReceived -= Client_LineReceived;
         }
 
         private void btn_Login_MouseEnter(object sender, EventArgs e)
@@ -144,16 +89,35 @@ namespace ClientForm
 
             try
             {
-                var client = ChatClientManager.Client;
+                await ApiClientManager.Api.LoginAsync(username, password);
 
-                // Chỉ kết nối nếu client chưa kết nối.
-                if (!client.IsConnected)
+                MessageBox.Show(
+                    "Đăng nhập thành công!",
+                    "Zalu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                this.Hide();
+
+                GiaoDien giaoDien = new GiaoDien();
+                giaoDien.ShowDialog();
+
+                this.Close();
+            }
+            catch (ApiException ex)
+            {
+                loginRequestPending = false;
+                btn_Login.Enabled = true;
+
+                string message = ex.Code switch
                 {
-                    await client.ConnectAsync("127.0.0.1", 8080);
-                }
+                    "INVALID_CREDENTIALS" => "Tên đăng nhập hoặc mật khẩu không đúng!",
+                    "CANNOT_CONNECT" => "Không kết nối được WebService tại http://127.0.0.1:5000.",
+                    "TIMEOUT" => "WebService không phản hồi.",
+                    _ => ex.Message
+                };
 
-                await client.SendLineAsync(
-                    $"LOGIN|{username}|{password}");
+                MessageBox.Show(message, "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
@@ -161,8 +125,7 @@ namespace ClientForm
                 btn_Login.Enabled = true;
 
                 MessageBox.Show(
-                    "Không thể gửi yêu cầu đăng nhập đến server.\n" +
-                    "Hãy kiểm tra server và kết nối mạng.\n\n" +
+                    "Không thể đăng nhập qua WebService.\n\n" +
                     ex.Message,
                     "Lỗi kết nối",
                     MessageBoxButtons.OK,
