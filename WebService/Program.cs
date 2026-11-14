@@ -1,10 +1,13 @@
 using WebService.Data;
 using WebService.Infrastructure;
+using System.Text;
 
 // =====================================================================
 //  ZaluChat Web API (Nhóm 17)
 //  WinForms (ClientForm)  ──HTTP + JSON──▶  WebService  ──ADO.NET──▶  SQL Server
 // =====================================================================
+
+Console.OutputEncoding = new UTF8Encoding(false);
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,25 @@ catch (Exception ex)
     return;
 }
 
+app.Use(async (context, next) =>
+{
+    var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+    try
+    {
+        await next();
+    }
+    finally
+    {
+        stopwatch.Stop();
+        app.Logger.LogInformation(
+            "HTTP {Method} {Path} returned {StatusCode} in {ElapsedMs} ms from {RemoteIp}",
+            context.Request.Method,
+            context.Request.Path.Value,
+            context.Response.StatusCode,
+            stopwatch.ElapsedMilliseconds,
+            context.Connection.RemoteIpAddress?.ToString() ?? "unknown");
+    }
+});
 app.UseMiddleware<ErrorMiddleware>();   // đổi lỗi thành JSON {code, message}
 app.UseStaticFiles();                   // phục vụ /uploads/... (ảnh, tệp)
 app.UseMiddleware<TokenMiddleware>();   // kiểm tra "Authorization: Bearer <token>"
