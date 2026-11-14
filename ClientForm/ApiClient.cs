@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -72,6 +73,14 @@ namespace ChatappZalu
 
         /// <summary>Đường dẫn đầy đủ của ảnh/tệp (AvatarPath, FilePath là đường dẫn tương đối /uploads/...).</summary>
         public string FileUrl(string relativePath) => BaseUrl + relativePath;
+
+        public async Task<Image> DownloadImageAsync(string relativePath)
+        {
+            byte[] bytes = await http.GetByteArrayAsync(FileUrl(relativePath));
+            using var stream = new MemoryStream(bytes);
+            using var source = Image.FromStream(stream);
+            return new Bitmap(source);
+        }
 
         // ================================================================ tài khoản
 
